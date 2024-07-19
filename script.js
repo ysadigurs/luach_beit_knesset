@@ -22,10 +22,10 @@ function updateClock() {
 //updateClock(); // Initial call to set the clock
 
 function updateShabbatHour() {
-    fetch('https://www.hebcal.com/shabbat?cfg=i2&geonameid=281184&ue=off&M=on&lg=s&tgt=_top')
+    fetch('https://www.hebcal.com/shabbat?cfg=json&geo=IL-Modiin&ue=off&M=on&lg=s&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        const shabbatHour = data.shabbat_hour;
+        const shabbatHour = data.items[0].title;
         const shabbatHourElement = document.getElementById('shabbat-hour');
         shabbatHourElement.textContent = shabbatHour;
         console.log('This is a debug message');
