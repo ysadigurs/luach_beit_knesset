@@ -99,10 +99,14 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.hebcal-shabat {
-    font-size: 24px;
-    font-family: Arial, sans-serif;
+.shabbat-hour {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: black;
     text-align: center;
-    margin-top: 40px;
-    color: black; /* Change text color to be visible on background */
 }
