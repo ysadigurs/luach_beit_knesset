@@ -20,3 +20,7 @@ function updateClock() {
 // Update clock every second
 setInterval(updateClock, 1000);
 updateClock(); // Initial call to set the clock
+
+function getHebcalShabat() {
+    fetch('https://www.hebcal.com/shabbat?cfg=i2&geonameid=281184&ue=off&M=on&lg=s&tgt=_top').then(response => response.text()).then(data => document.getElementById('hebcal-shabbat').innerHTML = data);
+}

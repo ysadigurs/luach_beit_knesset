@@ -99,3 +99,10 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.hebcal-shabat {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    color: white; /* Change text color to be visible on background */
+}
