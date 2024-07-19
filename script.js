@@ -18,8 +18,8 @@ function updateClock() {
 }
 
 // Update clock every second
-setInterval(updateClock, 1000);
-updateClock(); // Initial call to set the clock
+//setInterval(updateClock, 1000);
+//updateClock(); // Initial call to set the clock
 
 function updateShabbatHour() {
     fetch('https://www.hebcal.com/shabbat?cfg=i2&geonameid=281184&ue=off&M=on&lg=s&tgt=_top')
@@ -28,6 +28,8 @@ function updateShabbatHour() {
         const shabbatHour = data.shabbat_hour;
         const shabbatHourElement = document.getElementById('shabbat-hour');
         shabbatHourElement.textContent = shabbatHour;
+        console.log('This is a debug message');
+        console.log('Shabbat hour:', shabbatHour);
     })
     .catch(error => {
         console.error('Error fetching the Shabbat hour:', error);
