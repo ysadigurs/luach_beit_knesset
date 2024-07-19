@@ -101,12 +101,12 @@ body {
 
 .shabbat-hour {
     position: absolute;
-    bottom: 50px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     border-radius: 8px;
-    color: black;
+    color: white;
     text-align: center;
 }
