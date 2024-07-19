@@ -1,73 +1,46 @@
 body {
-    background-color: #f0f0f0; /* Background color */
+    background-image: url('beit_knesset_background.jpg');
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: auto 1fr; /* First row for the image, second row for the clock */
+    grid-template-rows: auto 1fr; /* Top row for header, bottom row for content */
     height: 100vh;
     font-family: Arial, sans-serif;
+    color: #fff; /* Text color for better contrast */
 }
 
 .header {
     display: flex;
-    justify-content: center; /* Centers image horizontally */
-    align-items: flex-start; /* Aligns image at the top */
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for header */
 }
 
-.image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+.header h1 {
+    margin: 0;
+    font-size: 24px;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+    padding: 20px;
     height: 100%;
+    overflow: auto;
 }
 
-.clock {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border: 10px solid #333;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.column {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for columns */
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff; /* Text color */
 }
 
-.hand {
-    position: absolute;
-    width: 50%;
-    height: 2px;
-    background: #333;
-    top: 50%;
-    transform-origin: 100%;
-    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
-}
-
-.hour {
-    height: 4px;
-}
-
-.minute {
-    height: 3px;
-}
-
-.second {
-    height: 2px;
-    background: red;
-}
-
-.center {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #333;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.column h2 {
+    margin-top: 0;
 }
