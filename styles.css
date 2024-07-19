@@ -21,7 +21,11 @@ body {
 }
 
 .digital-clock {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;   
     font-size: 48px;
+    border-radius: 8px;
     color: #333;
 }
 
