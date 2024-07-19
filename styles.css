@@ -1,18 +1,18 @@
 body {
-    display: flex;
-    justify-content: center;
     height: 100vh; /* Full viewport height */
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #fff;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center; /* Center the image horizontally */
+}
+
+#top-image {
+    width: 100%; /* Make the image responsive to the width of the screen */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove extra space below the image */
 }
 
 .clock-container {
