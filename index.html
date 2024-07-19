@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website</title>
+    <title>Simple Website with Analog Clock</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 id="clock">Loading...</h1>
-        <img src="beit_knesset_title.jpg" alt="Image">
+        <div class="clock">
+            <div class="hand hour" id="hour-hand"></div>
+            <div class="hand minute" id="minute-hand"></div>
+            <div class="hand second" id="second-hand"></div>
+            <div class="center"></div>
+        </div>
+        <img src="path/to/your/image.jpg" alt="Image" class="image">
     </div>
     <script src="script.js"></script>
 </body>
