@@ -3,15 +3,16 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: auto 1fr; /* Top row for image, bottom row for clock */
+    grid-template-rows: auto 1fr; /* First row for the image, second row for the clock */
     height: 100vh;
     font-family: Arial, sans-serif;
 }
 
 .header {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centers image horizontally */
+    align-items: flex-start; /* Aligns image at the top */
+    width: 100%;
 }
 
 .image {
