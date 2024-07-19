@@ -9,7 +9,7 @@ body {
 
 .header {
     width: 100%;
-    height: top;
+    height: 0;
     text-align: center; /* Center the image horizontally */
 }
 
