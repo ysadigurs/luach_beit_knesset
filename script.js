@@ -1,25 +1,17 @@
 function updateClock() {
+    const clockElement = document.getElementById('digital-clock');
     const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const second = now.getSeconds();
-    
-    const hourHand = document.getElementById('hour-hand');
-    const minuteHand = document.getElementById('minute-hand');
-    const secondHand = document.getElementById('second-hand');
-    
-    const hourDeg = (hour % 12) * 30 + (minute / 2);
-    const minuteDeg = minute * 6;
-    const secondDeg = second * 6;
-    
-    hourHand.style.transform = `rotate(${hourDeg}deg)`;
-    minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-    secondHand.style.transform = `rotate(${secondDeg}deg)`;
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    clockElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Update clock every second
-//setInterval(updateClock, 1000);
-//updateClock(); // Initial call to set the clock
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initialize the clock
+updateClock();
 
 function updateShabbatHour() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&geo=IL-Modiin&ue=off&M=on&lg=s&tgt=_top')
