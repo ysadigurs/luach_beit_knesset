@@ -1,9 +1,5 @@
 body {
     display: flex;
-    background-image: url('beit_knesset_background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full viewport height */
