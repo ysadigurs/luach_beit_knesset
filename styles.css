@@ -7,26 +7,31 @@ body {
     align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevents scrollbars */
 }
 
-.container {
-    text-align: center;
+.header {
     width: 100%;
-    padding: 20px;
 }
 
 .image {
     width: 100%;
     max-width: 600px;
     height: auto;
-    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    flex: 1; /* Takes up remaining space */
+    flex-direction: column;
 }
 
 .clock {
     position: relative;
     width: 200px;
     height: 200px;
-    margin: 0 auto;
     border: 10px solid #333;
     border-radius: 50%;
     background: #fff;
