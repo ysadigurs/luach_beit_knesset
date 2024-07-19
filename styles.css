@@ -26,6 +26,7 @@ body {
     left: 50%;
     transform: translateX(-50%);   
     font-size: 48px;
+    padding: 10px 20px;
     border-radius: 8px;
     color: #333;
     text-align: center;
