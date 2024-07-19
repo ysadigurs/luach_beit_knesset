@@ -1,16 +1,16 @@
 body {
-    background-image: url('beit_knesset_background..jpg');
+    display: flex;
+    background-image: url('beit_knesset_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
     margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    height: 100vh;
+    font-family: Arial, sans-serif;
     font-family: Arial, sans-serif;
     color: #fff;
-    align-items: center;
 }
 
 .header {
