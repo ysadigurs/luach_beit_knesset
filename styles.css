@@ -20,16 +20,22 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.digital-clock {
-    position: absolute;
-    bottom: 250px;
-    left: 50%;
-    transform: translateX(-50%);   
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#digital-clock {
     font-size: 48px;
-    padding: 10px 20px;
-    border-radius: 8px;
     color: #333;
-    text-align: center;
 }
 
 .shabbat-hour {
