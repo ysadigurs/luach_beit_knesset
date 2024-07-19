@@ -2,16 +2,16 @@ body {
     background-color: #f0f0f0; /* Background color */
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Top row for image, bottom row for clock */
     height: 100vh;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Prevents scrollbars */
 }
 
 .header {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
@@ -22,10 +22,9 @@ body {
 
 .container {
     display: flex;
-    align-items: center; /* Centers content vertically */
-    justify-content: center; /* Centers content horizontally */
-    flex: 1; /* Takes up remaining space */
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .clock {
