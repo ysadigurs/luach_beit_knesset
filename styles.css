@@ -43,6 +43,7 @@ body {
     position: absolute;
     bottom: 150px;
     left: 50%;
+    height: 150px;
     transform: translateX(-50%);
     background-color: green;
     padding: 10px 20px;
