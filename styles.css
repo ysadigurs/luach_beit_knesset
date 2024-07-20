@@ -41,14 +41,11 @@ body {
 
 .shabbat-hour {
     position: absolute;
+    justify-content: center;
     bottom: 150px;
-    left: 50%;
+    align-items: center;
     width: 300px;
     height: 150px;
-    transform: translateX(-50%);
-    background-color: green;
-    padding: 10px 20px;
-    border-radius: 8px;
     color: black;
     text-align: center;
 }
