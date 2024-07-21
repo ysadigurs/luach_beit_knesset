@@ -19,6 +19,20 @@ body {
     display: block; /* Remove extra space below the image */
 }
 
+.container {
+    display: grid;
+    grid-template: 150px / auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+.container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
 .clock-container {
     display: flex;
     justify-content: center;

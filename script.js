@@ -25,7 +25,7 @@ function updateShabbatHour() {
     .then(data => {
         const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substring(11, 16);
         const shabbatHourElement = document.getElementById('shabbat-hour');
-        shabbatHourElement.textContent = shabbatHour;
+        shabbatHourElement.textContent = הדלקת נרות: shabbatHour;
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
     })
