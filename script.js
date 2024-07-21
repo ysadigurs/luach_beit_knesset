@@ -25,6 +25,10 @@ function updateShabbatHour() {
     .then(data => {
         const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substring(11, 16);
         document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
+        const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
+        document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
+        
+
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
     })
