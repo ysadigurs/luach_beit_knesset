@@ -13,8 +13,14 @@ setInterval(updateClock, 1000);
 // Initialize the clock
 updateClock();
 
+// Nof hayalon
+// latitude=34.991321
+// longitude=31.871215 
+// elev=
+// tzid= 
+
 function updateShabbatHour() {
-    fetch('https://www.hebcal.com/shabbat?cfg=json&geo=IL-Modiin&ue=off&M=on&lg=s&tgt=_top')
+    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geo=pos&latitude=34.991321&longitude=31.871215&c=on&b=10&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
         const shabbatHour = data.items[0].title;
