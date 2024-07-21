@@ -8,10 +8,10 @@ function updateClock() {
 }
 
 // Update the clock every second
-setInterval(updateClock, 1000);
+//setInterval(updateClock, 1000);
 
 // Initialize the clock
-updateClock();
+//updateClock();
 
 // Nof hayalon
 // latitude=34.991321
