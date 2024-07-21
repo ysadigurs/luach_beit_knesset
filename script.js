@@ -23,8 +23,8 @@ function updateShabbatHour() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geo=pos&latitude=34.991321&longitude=31.871215&c=on&b=10&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        data.items.find( record => record.title_orig === "Candle lighting");
-        const shabbatHour = record.title.substing(0,5);
+        const candle = data.items.find( record => record.title_orig === "Candle lighting");
+        const shabbatHour = candle.title.substing(0,5);
         const shabbatHourElement = document.getElementById('shabbat-hour');
         shabbatHourElement.textContent = shabbatHour;
         console.log('This is a debug message');
