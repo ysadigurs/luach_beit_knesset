@@ -2,17 +2,15 @@
 let config;
 
 function readConfig() {
-    try {
-        const response = fetch('config.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        config = response.json();
+    fetch('config.json')
+    .then(response => response.json())
+    .then(data => {
+        config = data.json();
         console.log('Configuration:', config);
-    } 
-    catch (error) {
-        console.error('Error fetching or parsing JSON:', error);
-    }
+    })
+    .catch(error => {
+        console.error('Error fetching the Shabbat hour:', error);
+    });
 }
 
 function updateClock() {
