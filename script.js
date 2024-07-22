@@ -1,20 +1,14 @@
 
-let config;
-
-async function readConfig() {
-    try {
-        const response = await fetch('config.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        config = await response.json();
-        console.log('Configuration:', config);
-    } catch (error) {
-        console.error('Error fetching or parsing JSON:', error);
-    }
-}
-
-
+const config = {
+    "shacharit_shabat_1": "06:25",
+    "shiur_daf_yomi": "07:00",
+    "shacharit_shabat":"08:00",
+    "mincha_gdola_shabat": "13:30",
+    "dvar_tora":"הרב גדעון",
+    "shiur_tfila": "הרב בוכריס",
+    "shiur_shabat": "הרב אלי, קנאים",
+    "mincha_gdola_chol": "13:30"   
+};
 
 function updateClock() {
     const clockElement = document.getElementById('digital-clock');
@@ -55,22 +49,6 @@ function addMinutesToTime(timeStr, minutesToAdd) {
     return `${newHours}:${newMinutes}`;
   }
 
-async function updateShabbatHours() {
-    try {
-        const response = await fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top');
-        const data = await response.json();
-        const shabbatHour = data.items.find(record => record.title_orig === "Candle lighting").date.substring(11, 16);
-        document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
-        const motzash = data.items.find(record => record.title_orig === "Havdalah").date.substring(11, 16);
-        document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
-        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
-        console.log('This is a debug message');
-        console.log('Shabbat hour:', shabbatHour);
-    } catch (error) {
-        console.error('Error fetching the Shabbat hour:', error);
-    }
-}
-/*
 function updateShabbatHours() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
@@ -87,7 +65,6 @@ function updateShabbatHours() {
         console.error('Error fetching the Shabbat hour:', error);
     });
 }
-*/
 
 function displayShabbatConfig() {
     document.getElementById('shacharit_shabat_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_1}`;
@@ -102,7 +79,6 @@ function displayShiurim() {
 }
 
 function initApp () {
-    await readConfig();
     updateShabbatHours();
     displayShabbatConfig();
     displayShiurim();
