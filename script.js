@@ -1,6 +1,4 @@
 
-let config;
-
 function readConfig() {
     fetch('config.json')
     .then(response => response.json())
@@ -85,6 +83,8 @@ function displayShiurim() {
 }
 
 function initApp () {
+    let config;
+
     readConfig();
     updateShabbatHours();
     displayShabbatConfig();
