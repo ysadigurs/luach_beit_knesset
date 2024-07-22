@@ -1,4 +1,6 @@
 
+let config;
+
 function readConfig() {
     fetch('config.json')
     .then(response => {
@@ -7,7 +9,8 @@ function readConfig() {
         }
         return response.json();
     })
-    .then(config => {
+    .then(data => {
+        config = data;
         console.log('Configuration:', config);
     })
     .catch(error => {
