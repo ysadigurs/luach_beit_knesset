@@ -90,7 +90,7 @@ function updateShabbatHours() {
 */
 
 function displayShabbatConfig() {
-    document.getElementById('shacharit_shabat_minian_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_minian_1}`;
+    document.getElementById('shacharit_shabat_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `שחרית:${config.shacharit_shabat}`;
 }
 
