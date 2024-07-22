@@ -1,3 +1,23 @@
+
+function readConfig() {
+    fetch('config.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(config => {
+        console.log('Configuration:', config);
+    })
+    .catch(error => {
+        console.error('Error fetching or parsing JSON:', error);
+    });
+}
+
+readConfig();
+
+
 function updateClock() {
     const clockElement = document.getElementById('digital-clock');
     const now = new Date();
@@ -19,15 +39,36 @@ function updateClock() {
 // elev=
 // tzid= 
 
-function updateShabbatHour() {
-    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geo=pos&latitude=34.991321&longitude=31.871215&c=on&b=10&M=on&lg=he&tgt=_top')
+function addMinutesToTime(timeStr, minutesToAdd) {
+    // Parse the input time string
+    let [hours, minutes] = timeStr.split(':').map(Number);
+  
+    // Create a Date object representing the time
+    let date = new Date();
+    date.setHours(hours);
+    date.setMinutes(minutes);
+  
+    // Add the specified minutes
+    date.setMinutes(date.getMinutes() + minutesToAdd);
+  
+    // Format the new time back into a string
+    let newHours = date.getHours().toString().padStart(2, '0');
+    let newMinutes = date.getMinutes().toString().padStart(2, '0');
+    return `${newHours}:${newMinutes}`;
+  }
+  
+
+
+function updateShabbatHours() {
+    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
         const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substring(11, 16);
         document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
         const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
         document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
-        
+        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`
+
 
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
@@ -37,4 +78,4 @@ function updateShabbatHour() {
     });
 }
 
-updateShabbatHour();
+updateShabbatHours();
