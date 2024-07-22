@@ -102,7 +102,7 @@ function displayShiurim() {
 }
 
 function initApp () {
-    readConfig();
+    await readConfig();
     updateShabbatHours();
     displayShabbatConfig();
     displayShiurim();
