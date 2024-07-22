@@ -15,9 +15,6 @@ function readConfig() {
     });
 }
 
-const config = readConfig();
-
-
 function updateClock() {
     const clockElement = document.getElementById('digital-clock');
     const now = new Date();
@@ -87,6 +84,7 @@ function displayShiurim() {
     document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
 }
 
+readConfig();
 updateShabbatHours();
 displayShabbatConfig();
 displayShiurim();
