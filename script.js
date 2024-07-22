@@ -9,9 +9,10 @@ function readConfig() {
         console.log('Configuration:', config);
     })
     .catch(error => {
-        console.error('Error fetching the Shabbat hour:', error);
+        console.error('Error fetching the config:', error);
     });
 }
+
 
 function updateClock() {
     const clockElement = document.getElementById('digital-clock');
