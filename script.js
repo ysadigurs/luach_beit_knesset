@@ -1,13 +1,13 @@
 
 let config;
 
-async function readConfig() {
+function readConfig() {
     try {
-        const response = await fetch('config.json');
+        const response = fetch('config.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        config = await response.json();
+        config = response.json();
         console.log('Configuration:', config);
     } 
     catch (error) {
