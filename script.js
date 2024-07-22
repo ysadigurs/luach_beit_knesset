@@ -15,7 +15,7 @@ function readConfig() {
     });
 }
 
-readConfig();
+const config = readConfig();
 
 
 function updateClock() {
@@ -58,7 +58,6 @@ function addMinutesToTime(timeStr, minutesToAdd) {
   }
   
 
-
 function updateShabbatHours() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
@@ -67,9 +66,7 @@ function updateShabbatHours() {
         document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
         const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
         document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
-        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`
-
-
+        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
     })
@@ -78,4 +75,18 @@ function updateShabbatHours() {
     });
 }
 
+function displayShabbatConfig() {
+    document.getElementById('shacharit_shabat_minian_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_minian_1}`;
+    document.getElementById('shacharit_shabat').textContent = `שחרית:${config.shacharit_shabat}`;
+}
+
+function displayShiurim() {
+    document.getElementById('shiur_daf_yomi').textContent = `דף יומי:${config.shiur_daf_yomi}`;
+    document.getElementById('dvar_tora').textContent = `דבר תורה:${config.dvar_tora}`;
+    document.getElementById('shiur_tfila').textContent = `שיעור אחרי תפילה:${config.shiur_tfila}`;
+    document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
+}
+
 updateShabbatHours();
+displayShabbatConfig();
+displayShiurim();
