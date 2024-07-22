@@ -1,13 +1,19 @@
 
+let config;
+
 function readConfig() {
     fetch('config.json')
-    .then(response => response.json())
-    .then(data => {
-        config = data;
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); 
+    })
+    .then(config => {
         console.log('Configuration:', config);
     })
-    .catch (error => {
-        console.error('Error fetching config', error);
+    .catch(error => {
+        console.error('Error fetching or parsing JSON:', error);
     });
 }
 
@@ -83,8 +89,6 @@ function displayShiurim() {
 }
 
 function initApp () {
-    let config;
-
     readConfig();
     updateShabbatHours();
     displayShabbatConfig();
