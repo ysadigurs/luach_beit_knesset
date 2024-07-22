@@ -5,7 +5,7 @@ function readConfig() {
     fetch('config.json')
     .then(response => response.json())
     .then(data => {
-        config = data.json();
+        config = data;
         console.log('Configuration:', config);
     })
     .catch(error => {
