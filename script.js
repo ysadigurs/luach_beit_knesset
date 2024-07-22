@@ -83,7 +83,11 @@ function displayShiurim() {
     document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
 }
 
-readConfig();
-updateShabbatHours();
-displayShabbatConfig();
-displayShiurim();
+function initApp () {
+    readConfig();
+    updateShabbatHours();
+    displayShabbatConfig();
+    displayShiurim();
+}
+
+initApp();
