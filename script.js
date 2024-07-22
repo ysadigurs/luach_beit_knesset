@@ -1,21 +1,18 @@
 
 let config;
 
-function readConfig() {
-    fetch('config.json')
-    .then(response => {
+async function readConfig() {
+    try {
+        const response = await fetch('config.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json();
-    })
-    .then(data => {
-        config = data;
+        config = await response.json();
         console.log('Configuration:', config);
-    })
-    .catch(error => {
+    } 
+    catch (error) {
         console.error('Error fetching or parsing JSON:', error);
-    });
+    }
 }
 
 function updateClock() {
