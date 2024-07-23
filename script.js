@@ -107,8 +107,24 @@ function displayShiurim() {
     document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
 }
 
+function getTodayDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based, so add 1
+    const day = String(today.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+}
 
 function displayChol() {
+    fetch('https://www.hebcal.com/converter?cfg=json&date=${getTodayDate()}&g2h=1&strict=1')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('today').textContent = `תאריך:${data.hebrew}`;
+    })
+    .catch(error => {
+        console.error('Error fetching today:', error);
+    });
     document.getElementById('shacharit_chol_1').textContent = `מנין ראשון:${config.shacharit_chol_1}`;
     document.getElementById('shacharit_chol_2').textContent = `מנין שני:${config.shacharit_chol_2}`;
     document.getElementById('shacharit_chol_3').textContent = `מנין שלישי:${config.shacharit_chol_3}`;
