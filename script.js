@@ -57,13 +57,14 @@ function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
     .then(data => {
+        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.date.substring(11, 16)}`;
         document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.date.substring(11, 16)}`;
         document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.date.substring(11, 16)}`;
         document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.date.substring(11, 16)}`;
         document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.date.substring(11, 16)}`;
         document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.date.substring(11, 16)}`;
         document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.date.substring(11, 16)}`;
-        document.getElementById('chatzot').textContent = `חצות:${data.times.chatzot.date.substring(11, 16)}`;
+        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.date.substring(11, 16)}`;
         document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.date.substring(11, 16)}`;
         document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.date.substring(11, 16)}`;
         document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.date.substring(11, 16)}`;
@@ -85,7 +86,7 @@ function displayShabbatHours() {
         const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
         document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
         document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
-        document.getElementById('parasha').textContent = `פרשת השבוע${data.items.find( record => record.category === "parashat").hebrew}`;
+        document.getElementById('parasha').textContent = `פרשת השבוע:${data.items.find( record => record.category === "parashat").hebrew}`;
 
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
