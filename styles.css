@@ -1,7 +1,7 @@
 body {
     height: 100vh; /* Full viewport height */
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     display: grid; 
     place-items: center;
     background-color: #f0f0f0;
