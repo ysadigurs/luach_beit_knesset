@@ -57,19 +57,19 @@ function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.substr(11, 16)}`;
-        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.substr(11, 16)}`;
-        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.substr(11, 16)}`;
+        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.substr(11, 5)}`;
+        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.substr(11, 5)}`;
+        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.substr(11, 5)}`;
         document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.substr(11, 16)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.substr(11, 16)}`;
-        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.substr(11, 16)}`;
-        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.substr(11, 16)}`;
-        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.substr(11, 16)}`;
-        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.substr(11, 16)}`;
-        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.substr(11, 16)}`;
-        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.substr(11, 16)}`;
-        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.substr(11, 16)}`;
-        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.substr(11, 16)}`;
+        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.substr(11, 5)}`;
+        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.substr(11, 5)}`;
+        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.substr(11, 5)}`;
+        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.substr(11, 5)}`;
+        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.substr(11, 5)}`;
+        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.substr(11, 5)}`;
+        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.substr(11, 5)}`;
+        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.substr(11, 5)}`;
+        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.substr(11, 5)}`;
         
     })
     .catch(error => {
@@ -81,12 +81,11 @@ function displayShabbatHours() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substring(11, 16);
-        document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
-        const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
-        document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
-        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
         document.getElementById('parasha').textContent = `פרשת השבוע:${data.items.find( record => record.category === "parashat").hebrew}`;
+        const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").substr(11, 5);
+        document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
+        document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
+        document.getElementById('motzash').textContent = `מוצ״ש:${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
 
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
