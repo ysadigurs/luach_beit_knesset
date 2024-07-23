@@ -21,7 +21,7 @@ body {
 
 .container {
     display: grid;
-    grid-template: auto auto auto;
+    grid-template-columns: auto auto auto;
     gap: 20px;
     background-color: #2196F3;
     padding: 20px;
