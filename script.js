@@ -7,7 +7,11 @@ const config = {
     "dvar_tora":"הרב גדעון",
     "shiur_tfila": "הרב בוכריס",
     "shiur_shabat": "הרב אלי, קנאים",
-    "mincha_gdola_chol": "13:30"   
+    "shacharit_chol_1":"05:40",
+    "shacharit_chol_2":"06:20",
+    "shacharit_chol_3":"07:30", 
+    "mincha_gdola_chol": "13:30",
+    "mincha_ktana_chol": "19:30"
 };
 
 function updateClock() {
@@ -47,9 +51,32 @@ function addMinutesToTime(timeStr, minutesToAdd) {
     let newHours = date.getHours().toString().padStart(2, '0');
     let newMinutes = date.getMinutes().toString().padStart(2, '0');
     return `${newHours}:${newMinutes}`;
-  }
+}
 
-function updateShabbatHours() {
+function displayZmanim() {
+    fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.date.substring(11, 16)}`;
+        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.date.substring(11, 16)}`;
+        document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.date.substring(11, 16)}`;
+        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.date.substring(11, 16)}`;
+        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.date.substring(11, 16)}`;
+        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.date.substring(11, 16)}`;
+        document.getElementById('chatzot').textContent = `חצות:${data.times.chatzot.date.substring(11, 16)}`;
+        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.date.substring(11, 16)}`;
+        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.date.substring(11, 16)}`;
+        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.date.substring(11, 16)}`;
+        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.date.substring(11, 16)}`;
+        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.date.substring(11, 16)}`;
+        
+    })
+    .catch(error => {
+        console.error('Error fetching the Zmanim:', error);
+    });
+}
+
+function displayShabbatHours() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
@@ -58,6 +85,8 @@ function updateShabbatHours() {
         const motzash = data.items.find( record => record.title_orig === "Havdalah").date.substring(11, 16);
         document.getElementById('motzash').textContent = `מוצ״ש:${motzash}`;
         document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
+        document.getElementById('parasha').textContent = `פרשת השבוע${data.items.find( record => record.category === "parashat").hebrew}`;
+
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
     })
@@ -66,7 +95,7 @@ function updateShabbatHours() {
     });
 }
 
-function displayShabbatConfig() {
+function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `שחרית:${config.shacharit_shabat}`;
 }
@@ -78,10 +107,37 @@ function displayShiurim() {
     document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
 }
 
+
+function displayChol() {
+    document.getElementById('shacharit_chol_1').textContent = `מנין ראשון:${config.shacharit_chol_1}`;
+    document.getElementById('shacharit_chol_2').textContent = `מנין שני:${config.shacharit_chol_2}`;
+    document.getElementById('shacharit_chol_3').textContent = `מנין שלישי:${config.shacharit_chol_3}`;
+    document.getElementById('mincha_gdola_chol').textContent = `מנחה גדולה:${config.mincha_gdola_chol}`;
+    document.getElementById('mincha_ktana_chol').textContent = `מנחה קטנה:${config.mincha_ktana_chol}`;
+    document.getElementById('arvit_chol').textContent = `ערבית:${addMinutesToTime(config.mincha_ktana_chol, 40)}`;  
+}
+
+function displayOdahot() {
+    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('odaha_1').textContent = `${data.items.find( record => record.category === "holiday").hebrew}`;
+        document.getElementById('odaha_2').textContent = `תחילת הצום${data.items.find( record => record.title_orig === "Fast begins").date.substring(11, 16)}`;
+        document.getElementById('odaha_3').textContent = `סוף הצום${data.items.find( record => record.title_orig === "Fast ends").date.substring(11, 16)}`;
+    })
+    .catch(error => {
+        console.error('Error fetching the Odahot:', error);
+    });
+}
+
+
 function initApp () {
-    updateShabbatHours();
-    displayShabbatConfig();
+    displayZmanim();
+    displayShabbatHours();
+    displayShabbatStatic();
     displayShiurim();
+    displayChol();
+    displayOdahot();
 }
 
 initApp();
