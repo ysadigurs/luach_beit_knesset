@@ -82,7 +82,7 @@ function displayShabbatHours() {
     .then(response => response.json())
     .then(data => {
         document.getElementById('parasha').textContent = `פרשת השבוע:${data.items.find( record => record.category === "parashat").hebrew}`;
-        const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").substr(11, 5);
+        const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
         document.getElementById('shabbat-hour').textContent = `הדלקת נרות:${shabbatHour}`;
         document.getElementById('mincha_erev').textContent = `מנחה ער״ש:${addMinutesToTime(shabbatHour, 12)}`;
         document.getElementById('motzash').textContent = `מוצ״ש:${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
