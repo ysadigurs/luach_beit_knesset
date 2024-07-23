@@ -118,7 +118,7 @@ function getTodayDate() {
 
 function displayChol() {
     const today = getTodayDate();
-    fetch('https://www.hebcal.com/converter?cfg=json&g2h=1&strict=1&date=${today}')
+    fetch(`https://www.hebcal.com/converter?cfg=json&g2h=1&strict=1&date=${today}`)
     .then(response => response.json())
     .then(data => {
         document.getElementById('today').textContent = `תאריך:${data.hebrew}`;
