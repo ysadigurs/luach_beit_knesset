@@ -61,8 +61,8 @@ function displayZmanim() {
         document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.substr(11, 5)}`;
         document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.substr(11, 5)}`;
         document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.substr(11, 5)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.substr(11, 5)}`;
-        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.substr(11, 5)}`;
+        document.getElementById('sofZmanShmaMGA').textContent = `סזק״ש מג״א:${data.times.sofZmanShmaMGA.substr(11, 5)}`;
+        document.getElementById('sofZmanShma').textContent = `סזק״ש גר״א:${data.times.sofZmanShma.substr(11, 5)}`;
         document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.substr(11, 5)}`;
         document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.substr(11, 5)}`;
         document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.substr(11, 5)}`;
