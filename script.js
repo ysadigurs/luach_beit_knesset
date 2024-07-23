@@ -57,19 +57,19 @@ function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.date.substring(11, 16)}`;
-        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.date.substring(11, 16)}`;
-        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.date.substring(11, 16)}`;
-        document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.date.substring(11, 16)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.date.substring(11, 16)}`;
-        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.date.substring(11, 16)}`;
-        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.date.substring(11, 16)}`;
-        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.date.substring(11, 16)}`;
-        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.date.substring(11, 16)}`;
-        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.date.substring(11, 16)}`;
-        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.date.substring(11, 16)}`;
-        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.date.substring(11, 16)}`;
-        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.date.substring(11, 16)}`;
+        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.substr(11, 16)}`;
+        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.substr(11, 16)}`;
+        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.substr(11, 16)}`;
+        document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.substr(11, 16)}`;
+        document.getElementById('sofZmanShmaMGA').textContent = `סוף זמן מג״א:${data.times.sofZmanShmaMGA.substr(11, 16)}`;
+        document.getElementById('sofZmanShma').textContent = `סוף זמן ק״ש גר״א:${data.times.sofZmanShma.substr(11, 16)}`;
+        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.substr(11, 16)}`;
+        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.substr(11, 16)}`;
+        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.substr(11, 16)}`;
+        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.substr(11, 16)}`;
+        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.substr(11, 16)}`;
+        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.substr(11, 16)}`;
+        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.substr(11, 16)}`;
         
     })
     .catch(error => {
