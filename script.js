@@ -81,11 +81,11 @@ function displayShabbatHours() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('parasha').textContent = ${data.items.find( record => record.category === "parashat").hebrew};
+        document.getElementById('parasha').textContent = `${data.items.find( record => record.category === "parashat").hebrew}`;
         const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
-        document.getElementById('shabbat-hour').textContent = ${shabbatHour};
-        document.getElementById('mincha_erev').textContent = ${addMinutesToTime(shabbatHour, 12)};
-        document.getElementById('motzash').textContent = ${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)};
+        document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
+        document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 12)}`;
+        document.getElementById('motzash').textContent = `${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
 
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
@@ -121,7 +121,7 @@ function displayChol() {
     fetch(`https://www.hebcal.com/converter?cfg=json&g2h=1&strict=1&date=${today}`)
     .then(response => response.json())
     .then(data => {
-        document.getElementById('today').textContent = ${data.hebrew};
+        document.getElementById('today').textContent = `${data.hebrew}`;
     })
     .catch(error => {
         console.error('Error fetching today:', error);
