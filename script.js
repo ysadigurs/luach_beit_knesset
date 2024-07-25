@@ -6,6 +6,7 @@ const config = {
     "mincha_gdola_shabat": "13:30",
     "mincha_ktana_shabat": "18:30",
     "dvar_tora":"הרב גדעון",
+    "shiur_tfila_time": "10:15",
     "shiur_tfila": "הרב בוכריס",
     "shiur_shabat_time": "17:45",
     "shiur_shabat": "הרב אלי, קנאים",
