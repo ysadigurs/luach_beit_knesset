@@ -14,7 +14,7 @@ const config = {
     "mincha_ktana_chol": "19:30"
 };
 
-function displayClock() {
+function updateClock() {
     const clockElement = document.getElementById('digital-clock');
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
@@ -138,7 +138,7 @@ function initApp () {
     // update clock every second
     setInterval(updateClock, 1000);
     // Initialize the clock
-    displayClock();
+    updateClock();
     displayZmanim();
     displayShabbatHours();
     displayShabbatStatic();
