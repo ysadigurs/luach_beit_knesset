@@ -14,7 +14,7 @@ const config = {
     "mincha_ktana_chol": "19:30"
 };
 
-function updateClock() {
+function displayClock() {
     const clockElement = document.getElementById('digital-clock');
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
