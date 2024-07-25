@@ -1,56 +1,20 @@
 body {
-    height: 100vh; /* Full viewport height */
     margin: 0;
-    font-family: 'Nunito', sans-serif;
-    display: grid; 
-    place-items: center;
+    font-family: 'Alef', sans-serif;
     background-color: #f0f0f0;
-}
-
-.header {
-    width: 20%;
-    height: 100%;
-    text-align: center; /* Center the image horizontally */
+    direction: rtl; 
+    text-align: right;
 }
 
 #top-image {
-    width: 100%; /* Make the image responsive to the width of the screen */
-    height: auto; /* Maintain the aspect ratio */
-    display: block; /* Remove extra space below the image */
+    width: 100%;
+    height: auto;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-}
-  
-.container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid black;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 16px;
-}
-  
-.clock-container {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 300px;
-    align-items: center;
-    width: 300px;
-    height: 150px;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.card-header {
+    text-align: center; /* Align card headers to the center */
 }
 
-
-#digital-clock {
-    font-size: 48px;
-    color: #333;
+.card-body {
+    text-align: right; /* Ensure the card body text aligns to the right */
 }
