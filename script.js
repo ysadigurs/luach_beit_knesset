@@ -96,6 +96,7 @@ function displayShabbatStatic() {
 function displayShiurim() {
     document.getElementById('shiur_daf_yomi').textContent = `${config.shiur_daf_yomi}`;
     document.getElementById('dvar_tora').textContent = `${config.dvar_tora}`;
+    document.getElementById('shiur_tfila_time').textContent = `${config.shiur_tfila_time}`;
     document.getElementById('shiur_tfila').textContent = `${config.shiur_tfila}`;
     document.getElementById('shiur_shabat_time').textContent = `${config.shiur_shabat_time}`; 
     document.getElementById('shiur_shabat').textContent = `${config.shiur_shabat}`;
