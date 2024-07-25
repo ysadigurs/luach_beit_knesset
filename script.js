@@ -4,8 +4,10 @@ const config = {
     "shiur_daf_yomi": "07:00",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
+    "mincha_ktana_shabat": "18:30",
     "dvar_tora":"הרב גדעון",
     "shiur_tfila": "הרב בוכריס",
+    "shiur_shabat_time": "17:45",
     "shiur_shabat": "הרב אלי, קנאים",
     "shacharit_chol_1":"05:40",
     "shacharit_chol_2":"06:20",
@@ -87,12 +89,14 @@ function displayShabbatHours() {
 function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
+    document.getElementById('mincha_ktana_shabat').textContent = `${config.mincha_ktana_shabat}`;
 }
 
 function displayShiurim() {
     document.getElementById('shiur_daf_yomi').textContent = `${config.shiur_daf_yomi}`;
     document.getElementById('dvar_tora').textContent = `${config.dvar_tora}`;
     document.getElementById('shiur_tfila').textContent = `${config.shiur_tfila}`;
+    document.getElementById('shiur_shabat_time').textContent = `${config.shiur_shabat_time}`; 
     document.getElementById('shiur_shabat').textContent = `${config.shiur_shabat}`;
 }
 
