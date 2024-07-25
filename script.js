@@ -23,17 +23,6 @@ function updateClock() {
     clockElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-// Update the clock every second
-//setInterval(updateClock, 1000);
-
-// Initialize the clock
-//updateClock();
-
-// Nof hayalon
-// latitude=34.991321
-// longitude=31.871215 
-// elev=
-// tzid= 
 
 function addMinutesToTime(timeStr, minutesToAdd) {
     // Parse the input time string
@@ -52,7 +41,7 @@ function addMinutesToTime(timeStr, minutesToAdd) {
     let newMinutes = date.getMinutes().toString().padStart(2, '0');
     return `${newHours}:${newMinutes}`;
 }
-
+// Nof hayalon
 function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
@@ -146,6 +135,10 @@ function displayOdahot() {
 
 
 function initApp () {
+    // update clock every second
+    setInterval(updateClock, 1000);
+    // Initialize the clock
+    displayClock();
     displayZmanim();
     displayShabbatHours();
     displayShabbatStatic();
