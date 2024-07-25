@@ -57,19 +57,19 @@ function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('chatzotNight').textContent = `חצות הלילה:${data.times.chatzotNight.substr(11, 5)}`;
-        document.getElementById('alotHaShachar').textContent = `עלות השחר:${data.times.alotHaShachar.substr(11, 5)}`;
-        document.getElementById('misheyakir').textContent = `זמן ציצית:${data.times.misheyakir.substr(11, 5)}`;
-        document.getElementById('sunrise').textContent = `נץ החמה:${data.times.sunrise.substr(11, 5)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `סזק״ש מג״א:${data.times.sofZmanShmaMGA.substr(11, 5)}`;
-        document.getElementById('sofZmanShma').textContent = `סזק״ש גר״א:${data.times.sofZmanShma.substr(11, 5)}`;
-        document.getElementById('sofZmanTfilla').textContent = `סוף זמן תפילה:${data.times.sofZmanTfilla.substr(11, 5)}`;
-        document.getElementById('chatzot').textContent = `חצות היום:${data.times.chatzot.substr(11, 5)}`;
-        document.getElementById('minchaGedola').textContent = `מנחה גדולה:${data.times.minchaGedola.substr(11, 5)}`;
-        document.getElementById('minchaKetana').textContent = `מנחה קטנה:${data.times.minchaKetana.substr(11, 5)}`;
-        document.getElementById('plagHaMincha').textContent = `פלג המנחה:${data.times.plagHaMincha.substr(11, 5)}`;
-        document.getElementById('sunset').textContent = `שקיעת החמה:${data.times.sunset.substr(11, 5)}`;
-        document.getElementById('tzeit7083deg').textContent = `צאת הכוכבים:${data.times.tzeit7083deg.substr(11, 5)}`;
+        document.getElementById('chatzotNight').textContent = `${data.times.chatzotNight.substr(11, 5)}`;
+        document.getElementById('alotHaShachar').textContent = `${data.times.alotHaShachar.substr(11, 5)}`;
+        document.getElementById('misheyakir').textContent = `${data.times.misheyakir.substr(11, 5)}`;
+        document.getElementById('sunrise').textContent = `${data.times.sunrise.substr(11, 5)}`;
+        document.getElementById('sofZmanShmaMGA').textContent = `${data.times.sofZmanShmaMGA.substr(11, 5)}`;
+        document.getElementById('sofZmanShma').textContent = `${data.times.sofZmanShma.substr(11, 5)}`;
+        document.getElementById('sofZmanTfilla').textContent = `${data.times.sofZmanTfilla.substr(11, 5)}`;
+        document.getElementById('chatzot').textContent = `${data.times.chatzot.substr(11, 5)}`;
+        document.getElementById('minchaGedola').textContent = `${data.times.minchaGedola.substr(11, 5)}`;
+        document.getElementById('minchaKetana').textContent = `${data.times.minchaKetana.substr(11, 5)}`;
+        document.getElementById('plagHaMincha').textContent = `${data.times.plagHaMincha.substr(11, 5)}`;
+        document.getElementById('sunset').textContent = `${data.times.sunset.substr(11, 5)}`;
+        document.getElementById('tzeit7083deg').textContent = `${data.times.tzeit7083deg.substr(11, 5)}`;
         
     })
     .catch(error => {
@@ -96,15 +96,15 @@ function displayShabbatHours() {
 }
 
 function displayShabbatStatic() {
-    document.getElementById('shacharit_shabat_1').textContent = `שחרית מנין ראשון:${config.shacharit_shabat_1}`;
-    document.getElementById('shacharit_shabat').textContent = `שחרית:${config.shacharit_shabat}`;
+    document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
+    document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
 }
 
 function displayShiurim() {
-    document.getElementById('shiur_daf_yomi').textContent = `דף יומי:${config.shiur_daf_yomi}`;
-    document.getElementById('dvar_tora').textContent = `דבר תורה:${config.dvar_tora}`;
-    document.getElementById('shiur_tfila').textContent = `שיעור אחרי תפילה:${config.shiur_tfila}`;
-    document.getElementById('shiur_shabat').textContent = `שיעור שבת:${config.shiur_shabat}`;
+    document.getElementById('shiur_daf_yomi').textContent = `${config.shiur_daf_yomi}`;
+    document.getElementById('dvar_tora').textContent = `${config.dvar_tora}`;
+    document.getElementById('shiur_tfila').textContent = `${config.shiur_tfila}`;
+    document.getElementById('shiur_shabat').textContent = `${config.shiur_shabat}`;
 }
 
 function getTodayDate() {
@@ -126,21 +126,18 @@ function displayChol() {
     .catch(error => {
         console.error('Error fetching today:', error);
     });
-    document.getElementById('shacharit_chol_1').textContent = `מנין ראשון:${config.shacharit_chol_1}`;
-    document.getElementById('shacharit_chol_2').textContent = `מנין שני:${config.shacharit_chol_2}`;
-    document.getElementById('shacharit_chol_3').textContent = `מנין שלישי:${config.shacharit_chol_3}`;
-    document.getElementById('mincha_gdola_chol').textContent = `מנחה גדולה:${config.mincha_gdola_chol}`;
-    document.getElementById('mincha_ktana_chol').textContent = `מנחה קטנה:${config.mincha_ktana_chol}`;
-    document.getElementById('arvit_chol').textContent = `ערבית:${addMinutesToTime(config.mincha_ktana_chol, 40)}`;  
+    document.getElementById('shacharit_chol_1').textContent = `${config.shacharit_chol_1}`;
+    document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
+    document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;
+    document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;
+    document.getElementById('mincha_ktana_chol').textContent = `${config.mincha_ktana_chol}`;
+    document.getElementById('arvit_chol').textContent = `${addMinutesToTime(config.mincha_ktana_chol, 40)}`;  
 }
 
 function displayOdahot() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('odaha_1').textContent = `${data.items.find( record => record.category === "holiday").hebrew}`;
-        document.getElementById('odaha_2').textContent = `תחילת הצום${data.items.find( record => record.title_orig === "Fast begins").date.substring(11, 16)}`;
-        document.getElementById('odaha_3').textContent = `סוף הצום${data.items.find( record => record.title_orig === "Fast ends").date.substring(11, 16)}`;
     })
     .catch(error => {
         console.error('Error fetching the Odahot:', error);
