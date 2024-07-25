@@ -136,9 +136,8 @@ function displayOdahot() {
 
 function initApp () {
     // update clock every second
-    setInterval(updateClock, 1000);
-    // Initialize the clock
-    updateClock();
+    //setInterval(updateClock, 1000);
+    //updateClock();
     displayZmanim();
     displayShabbatHours();
     displayShabbatStatic();
