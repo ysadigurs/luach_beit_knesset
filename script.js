@@ -1,4 +1,3 @@
-
 const config = {
     "shacharit_shabat_1": "06:25",
     "shiur_daf_yomi": "07:00",
@@ -14,7 +13,8 @@ const config = {
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:30",
-    "mincha_ktana_chol": "19:30"
+    "mincha_ktana_chol": "19:30",
+    "odaha_1": "מזל טוב למשפחת כהן להולדת הנכד"
 };
 
 function updateClock() {
@@ -130,7 +130,12 @@ function displayChol() {
     document.getElementById('arvit_chol').textContent = `${addMinutesToTime(config.mincha_ktana_chol, 40)}`;  
 }
 
-function displayOdahot() {
+
+function displayOdahot() {   
+    document.getElementById('odaha_1').textContent = `${config.odaha_1}`;
+} 
+
+function displayChagim() {    
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
@@ -149,6 +154,7 @@ function initApp () {
     displayShabbatStatic();
     displayShiurim();
     displayChol();
+    displayChagim();
     displayOdahot();
 }
 
