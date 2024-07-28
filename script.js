@@ -70,7 +70,7 @@ function displayZmanim() {
 }
 
 function displayShabbatHours() {
-    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on₪lg=he&tgt=_top')
+    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
         document.getElementById('parasha').textContent = `${data.items.find( record => record.category === "parashat").hebrew}`;
