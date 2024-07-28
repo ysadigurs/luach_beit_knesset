@@ -20,9 +20,9 @@ body {
     text-align: right; /* Ensure the card body text aligns to the right */
 }
 
-.custom-line-spacing {
-    line-height: 1.0; /* Adjust the line height as needed */
-}
+/* .custom-line-spacing { */
+/*     line-height: 1.0; /* Adjust the line height as needed */ */
+/* } */
 
 .text-wrap {
     white-space: normal; /* Ensures text wraps within the column */
