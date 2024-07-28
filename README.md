@@ -17,4 +17,4 @@ This is a simple web application that displays various times and schedules for a
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE].
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
