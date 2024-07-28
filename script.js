@@ -14,7 +14,7 @@ const config = {
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:30",
     "mincha_ktana_chol": "19:30",
-    "odaha_1": "מזל טוב למשפחת כהן להולדת הנכד"
+    "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
 };
 
 function updateClock() {
@@ -78,7 +78,8 @@ function displayShabbatHours() {
         document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
         document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 12)}`;
         document.getElementById('motzash').textContent = `${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
-
+        document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === getTodayDate())).hebrew}`;
+        
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
     })
@@ -139,6 +140,7 @@ function displayChagim() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
+        document.getElementById('chagim_1').textContent = `${data.items.find( record => record.category === "mevarchim").hebrew}`;
     })
     .catch(error => {
         console.error('Error fetching the Odahot:', error);
