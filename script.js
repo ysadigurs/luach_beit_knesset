@@ -78,7 +78,8 @@ function displayShabbatHours() {
         document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
         document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 12)}`;
         document.getElementById('motzash').textContent = `${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
-        document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === ${getTodayDate()})).hebrew}`;
+        const today = getTodayDate();
+        document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
         
         console.log('This is a debug message');
         console.log('Shabbat hour:', shabbatHour);
