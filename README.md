@@ -13,3 +13,8 @@ This is a simple web application that displays various times and schedules for a
 - Google Fonts for the Alef font.
 - Bootstrap for styling.
 - Hebcal API for fetching Jewish calendar times.
+
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE].
