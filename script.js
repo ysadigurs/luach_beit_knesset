@@ -13,7 +13,7 @@ const config = {
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:30",
-    "mincha_ktana_chol": "19:30",
+    "mincha_ktana_chol": "19:20",
     "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
 };
 
@@ -76,7 +76,7 @@ function displayShabbatHours() {
         document.getElementById('parasha').textContent = `${data.items.find( record => record.category === "parashat").hebrew}`;
         const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
         document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
-        document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 12)}`;
+        document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 13)}`;
         document.getElementById('motzash').textContent = `${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
         const today = getTodayDate();
         document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
