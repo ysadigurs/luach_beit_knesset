@@ -74,7 +74,7 @@ function displayZmanimLeibovitz() {
     .then(response => response.json())
     .then(data => {
         const today = getTodayDate();
-        const item = data.find( record => (record.date === today));
+        const item = data.find( record => (record["יום"] === today));
         document.getElementById('chatzotNight').textContent = `${item["חצות"].substr(0,5)}`;
         document.getElementById('alotHaShachar').textContent = `${item["עלות השחר"].substr(0,5)}`;
         document.getElementById('misheyakir').textContent = `${item["זמן ציצית"].substr(0,5)}`;
