@@ -70,7 +70,7 @@ function displayZmanim() {
 }
 
 function displayZamanimLeibovitz() {
-    fetch('./zmanim.json')
+    fetch('https://ysadigurs.github.io/luach_beit_knesset/zmanim.json')
     .then(response => response.json())
     .then(data => {
         const today = getTodayDate();
