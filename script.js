@@ -74,10 +74,12 @@ function displayZmanimLeibovitz() {
     .then(response => response.json())
     .then(data => {
         const today = getTodayDate();
-        document.getElementById('chatzotNight').textContent = `${data.items.find( record => (record.category === "חצות" && record.date === today)).substr(0,5)}`;
-        document.getElementById('alotHaShachar').textContent = `${data.items.find( record => (record.category === "עלות השחר" && record.date === today)).substr(0,5)}`;
-        document.getElementById('misheyakir').textContent = `${data.items.find( record => (record.category === "זמן ציצית" && record.date === today)).substr(0,5)}`;
-        
+        data.find( record => (record.date === today))
+        .then( record => {
+            document.getElementById('chatzotNight').textContent = `${record["חצות"].substr(0,5)}`;
+            document.getElementById('alotHaShachar').textContent = `${record["עלות השחר"].substr(0,5)}`;
+            document.getElementById('misheyakir').textContent = `${record["זמן ציצית"].substr(0,5)}`;
+        })
 /*
         document.getElementById('sunrise').textContent = `${data.times.sunrise.substr(11, 5)}`;
         document.getElementById('sofZmanShmaMGA').textContent = `${data.times.sofZmanShmaMGA.substr(11, 5)}`;
