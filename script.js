@@ -69,12 +69,18 @@ function displayZmanim() {
     });
 }
 
+function parseDateDDMMYYYY(dateStr) {
+    const [day, month, year] = dateStr.split('-').map(Number);
+    return new Date(year, month - 1, day); // month is 0-indexed in JavaScript Date
+}
+
+
 function displayZmanimLeibovitz() {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/zmanim.json")
     .then(response => response.json())
     .then(data => {
         const today = getTodayDate();
-        const item = data.find( record => (record["יום"] === today));
+        const item = data.find( record => (parseDateDDMMYYYY(record["יום"]) === today));
         document.getElementById('chatzotNight').textContent = `${item["חצות"].substr(0,5)}`;
         document.getElementById('alotHaShachar').textContent = `${item["עלות השחר"].substr(0,5)}`;
         document.getElementById('misheyakir').textContent = `${item["זמן ציצית"].substr(0,5)}`;
