@@ -122,7 +122,7 @@ function displayShabbatHours() {
     .then(data => {
         parasha = data.items.find( record => record.category === "parashat").hebrew;
         document.getElementById('parasha').textContent = `${parasha}`;
-        parasha_date = formatDateToDDMMYYYY(data.items.find( record => record.category === "parashat").date);
+        parasha_date = formatDateToDDMMYYYY(new Date(data.items.find( record => record.category === "parashat").date));
         
         //const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
         //document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
