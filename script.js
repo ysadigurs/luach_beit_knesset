@@ -114,7 +114,7 @@ function displayZmanimLeibovitz() {
 }
 */
 
-let parasha = null;
+let parasha_date = null;
 
 function displayShabbatHours() { 
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
@@ -122,6 +122,9 @@ function displayShabbatHours() {
     .then(data => {
         parasha = data.items.find( record => record.category === "parashat").hebrew;
         document.getElementById('parasha').textContent = `${parasha}`;
+        parasha_date = data.items.find( record => record.date === "parashat").date;
+        parasha_date = formatDateToDDMMYYYY(parasha_date);
+
         //const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
         //document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
         //document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 13)}`;
@@ -133,7 +136,7 @@ function displayShabbatHours() {
         fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
         .then(response => response.json())
         .then(data => {
-            const item =  data.find( record => (record["parasha"] === parasha));
+            const item =  data.find( record => (record["date"] === parasha_date));
             document.getElementById('motzash').textContent = `${item["motzash"]}`;
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"]}`;                 
 
