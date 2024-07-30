@@ -27,3 +27,14 @@ body {
 .text-wrap {
     white-space: normal; /* Ensures text wraps within the column */
 }
+
+.bg-image {
+    background-image: url('ארון\ הקודש\ 1.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px; /* Adjust padding as needed */
+    color: white; /* Ensure text is visible on the background */
+    border-radius: 15px; /* Optional: add rounded corners */
+  }
+

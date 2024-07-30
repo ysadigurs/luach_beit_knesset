@@ -2,7 +2,7 @@ import pandas
 import json
 
 # Read excel document
-excel_data_df = pandas.read_excel('zmanim_1.xlsx', sheet_name='זמנים', engine='openpyxl')
+excel_data_df = pandas.read_excel('tashpad.xlsx', sheet_name='tashpad', engine='openpyxl')
 
 for column in excel_data_df.columns:
     if pandas.api.types.is_datetime64_any_dtype(excel_data_df[column]):
