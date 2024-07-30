@@ -74,13 +74,21 @@ function parseDateDDMMYYYY(dateStr) {
     return new Date(year, month - 1, day); // month is 0-indexed in JavaScript Date
 }
 
+function formatDateToDDMMYYYY(date) {
+    const day = String(date.getDate()).padStart(2, '0'); // Get day and pad with leading zero if needed
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Get month (0-indexed) and pad with leading zero
+    const year = date.getFullYear(); // Get year
+
+    return `${day}-${month}-${year}`; // Format as dd-mm-yyyy
+}
+
 
 function displayZmanimLeibovitz() {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/zmanim.json")
     .then(response => response.json())
     .then(data => {
-        const today = getTodayDate();
-        const item = data.find( record => (parseDateDDMMYYYY(record["יום"]) === today));
+        const todayDDMMYYYY = formatDateToDDMMYYYY(getTodayDate());
+        const item = data.find( record => (record["יום"] === todayDDMMYYYY));
         document.getElementById('chatzotNight').textContent = `${item["חצות"].substr(0,5)}`;
         document.getElementById('alotHaShachar').textContent = `${item["עלות השחר"].substr(0,5)}`;
         document.getElementById('misheyakir').textContent = `${item["זמן ציצית"].substr(0,5)}`;
