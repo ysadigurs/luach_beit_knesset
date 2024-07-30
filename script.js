@@ -69,7 +69,7 @@ function displayZmanim() {
     });
 }
 
-function displayZamanimLeibovitz() {
+function displayZmanimLeibovitz() {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/zmanim.json")
     .then(response => response.json())
     .then(data => {
@@ -181,13 +181,13 @@ function initApp () {
     setInterval(updateClock, 1000);
     updateClock();
     //displayZmanim();
-    displayZamanimLeibovitz();
-    displayShabbatHours();
+    displayZmanimLeibovitz();
+    /*displayShabbatHours();
     displayShabbatStatic();
     displayShiurim();
     displayChol();
     displayChagim();
-    displayOdahot();
+    displayOdahot();*/
 }
 
 initApp();
