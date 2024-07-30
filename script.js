@@ -87,7 +87,8 @@ function displayZmanimLeibovitz() {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/zmanim.json")
     .then(response => response.json())
     .then(data => {
-        const todayDDMMYYYY = formatDateToDDMMYYYY(getTodayDate());
+        const today = new Date(getTodayDate());
+        const todayDDMMYYYY = formatDateToDDMMYYYY(today);
         const item = data.find( record => (record["יום"] === todayDDMMYYYY));
         document.getElementById('chatzotNight').textContent = `${item["חצות"].substr(0,5)}`;
         document.getElementById('alotHaShachar').textContent = `${item["עלות השחר"].substr(0,5)}`;
