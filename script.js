@@ -114,11 +114,13 @@ function displayZmanimLeibovitz() {
 }
 */
 
-function displayShabbatHours() {
+let parasha = null;
+
+function displayShabbatHours() { 
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        const parasha = data.items.find( record => record.category === "parashat").hebrew;
+        parasha = data.items.find( record => record.category === "parashat").hebrew;
         document.getElementById('parasha').textContent = `${parasha}`;
         //const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
         //document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
