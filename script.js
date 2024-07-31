@@ -44,7 +44,9 @@ function addMinutesToTime(timeStr, minutesToAdd) {
     let newMinutes = date.getMinutes().toString().padStart(2, '0');
     return `${newHours}:${newMinutes}`;
 }
-// Nof hayalon
+/* 
+ * Replaced by Leibovitz times
+ *
 function displayZmanim() {
     fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
     .then(response => response.json())
@@ -68,6 +70,7 @@ function displayZmanim() {
         console.error('Error fetching the Zmanim:', error);
     });
 }
+*/
 
 function parseDateDDMMYYYY(dateStr) {
     const [day, month, year] = dateStr.split('-').map(Number);
@@ -83,51 +86,18 @@ function formatDateToDDMMYYYY(date) {
 }
 
 
-/*
-function displayZmanimLeibovitz() {
-    fetch("https://ysadigurs.github.io/luach_beit_knesset/zmanim.json")
-    .then(response => response.json())
-    .then(data => {
-        const today = new Date(getTodayDate());
-        const todayDDMMYYYY = formatDateToDDMMYYYY(today);
-        const item = data.find( record => (record["יום"] === todayDDMMYYYY));
-        document.getElementById('chatzotNight').textContent = `${item["חצות"].substr(0,5)}`;
-        document.getElementById('alotHaShachar').textContent = `${item["עלות השחר"].substr(0,5)}`;
-        document.getElementById('misheyakir').textContent = `${item["זמן ציצית"].substr(0,5)}`;
-                
-    
-        document.getElementById('sunrise').textContent = `${data.times.sunrise.substr(11, 5)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `${data.times.sofZmanShmaMGA.substr(11, 5)}`;
-        document.getElementById('sofZmanShma').textContent = `${data.times.sofZmanShma.substr(11, 5)}`;
-        document.getElementById('sofZmanTfilla').textContent = `${data.times.sofZmanTfilla.substr(11, 5)}`;
-        document.getElementById('chatzot').textContent = `${data.times.chatzot.substr(11, 5)}`;
-        document.getElementById('minchaGedola').textContent = `${data.times.minchaGedola.substr(11, 5)}`;
-        document.getElementById('minchaKetana').textContent = `${data.times.minchaKetana.substr(11, 5)}`;
-        document.getElementById('plagHaMincha').textContent = `${data.times.plagHaMincha.substr(11, 5)}`;
-        document.getElementById('sunset').textContent = `${data.times.sunset.substr(11, 5)}`;
-        document.getElementById('tzeit7083deg').textContent = `${data.times.tzeit7083deg.substr(11, 5)}`;
-        
-    })
-    .catch(error => {
-        console.error('Error fetching the Zmanim:', error);
-    });
-}
-*/
-
 let parasha_date = null;
 
-function displayShabbatHours() { 
+// Get Parasha date from Hebcal
+// Retrieve Parasha record from Leibovitz
+function displayLeibovitzZmanim() { 
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
+        // Hebcal parasha and daily daf yomi
         parasha = data.items.find( record => record.category === "parashat").hebrew;
         document.getElementById('parasha').textContent = `${parasha}`;
         parasha_date = formatDateToDDMMYYYY(new Date(data.items.find( record => record.category === "parashat").date));
-        
-        //const shabbatHour = data.items.find( record => record.title_orig === "Candle lighting").date.substr(11, 5);
-        //document.getElementById('shabbat-hour').textContent = `${shabbatHour}`;
-        //document.getElementById('mincha_erev').textContent = `${addMinutesToTime(shabbatHour, 13)}`;
-        //document.getElementById('motzash').textContent = `${data.items.find( record => record.title_orig === "Havdalah").date.substr(11, 5)}`;
         const today = getTodayDate();
         document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
   
@@ -135,9 +105,30 @@ function displayShabbatHours() {
         fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
         .then(response => response.json())
         .then(data => {
+            // Shabat 
             const item =  data.find( record => (record["date"] === parasha_date));
+            document.getElementById('shabbat-hour').textContent = `${item["adlaka"]}`;
+            document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"]}`; 
             document.getElementById('motzash').textContent = `${item["motzash"]}`;
-            document.getElementById('shabbat-hour').textContent = `${item["adlaka"]}`;                 
+            
+            // Zmanim (weekly)
+            document.getElementById('alotHaShachar').textContent = `${item["alot"]}`;
+            document.getElementById('misheyakir').textContent = `${item["tzitzit"]}`;
+            document.getElementById('sunrise').textContent = `${item["netz"]}`;
+            document.getElementById('sofZmanShmaMGA').textContent = `${item["kshmamagen"]}`;
+            document.getElementById('sofZmanShma').textContent = `${item["kshmaagra"]}`;
+            document.getElementById('sofZmanTfilla').textContent = `${item["tfilaagra"]}`;
+            document.getElementById('chatzot').textContent = `${item["hazot"]}`;
+            document.getElementById('chatzotNight').textContent = `${item["hazot"]}`;            
+            document.getElementById('minchaGedola').textContent = `${item["minchagdola"]}`;
+            document.getElementById('plagHaMincha').textContent = `${item["netz"]}`;
+            //document.getElementById('plagHaMincha').textContent = `${item["minchahol"]}`; -- missing plag mincha
+            document.getElementById('sunset').textContent = `${item["shkia"]}`;
+            document.getElementById('tzeit').textContent = `${item["tzeit"]}`;
+            
+            // Tfila Hol
+            document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"]}`; 
+            document.getElementById('arvit_chol').textContent = `${item["arvithol"]}`; 
 
         })
         .catch(error => {
@@ -155,7 +146,6 @@ function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
     document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
-    document.getElementById('mincha_ktana_shabat').textContent = `${config.mincha_ktana_shabat}`;
 }
 
 function displayShiurim() {
@@ -190,8 +180,7 @@ function displayChol() {
     document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
     document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;
     document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;
-    document.getElementById('mincha_ktana_chol').textContent = `${config.mincha_ktana_chol}`;
-    document.getElementById('arvit_chol').textContent = `${addMinutesToTime(config.mincha_ktana_chol, 40)}`;  
+     
 }
 
 
@@ -214,14 +203,13 @@ function displayChagim() {
 function initApp () {
     setInterval(updateClock, 1000);
     updateClock();
-    //displayZmanim();
-    //displayZmanimLeibovitz();
-    displayShabbatHours();
-    /*displayShabbatStatic();
+    displayLeibovitzZmanim(); 
+    // displayZmanim();   - Replaced by Leibovitz
+    displayShabbatStatic();
     displayShiurim();
     displayChol();
     displayChagim();
-    displayOdahot();*/
+    displayOdahot();
 }
 
 initApp();
