@@ -5,6 +5,7 @@ body {
     direction: rtl; 
     text-align: right;
     font-weight: bold;
+    line-height: 0.7;
 }
 
 #top-image {
