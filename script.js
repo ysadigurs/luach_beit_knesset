@@ -12,8 +12,7 @@ const config = {
     "shacharit_chol_1":"05:40",
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
-    "mincha_gdola_chol": "13:30",
-    "mincha_ktana_chol": "19:20",
+    "mincha_gdola_chol": "13:30",   
     "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
 };
 
@@ -107,24 +106,23 @@ function displayLeibovitzZmanim() {
         .then(data => {
             // Shabat 
             const item =  data.find( record => (record["date"] === parasha_date));
-            document.getElementById('shabbat-hour').textContent = `${item["adlaka"]}`;
-            document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"]}`; 
-            document.getElementById('motzash').textContent = `${item["motzash"]}`;
+            document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
+            document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
+            document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
             // Zmanim (weekly)
-            document.getElementById('alotHaShachar').textContent = `${item["alot"]}`;
-            document.getElementById('misheyakir').textContent = `${item["tzitzit"]}`;
-            document.getElementById('sunrise').textContent = `${item["netz"]}`;
-            document.getElementById('sofZmanShmaMGA').textContent = `${item["kshmamagen"]}`;
-            document.getElementById('sofZmanShma').textContent = `${item["kshmaagra"]}`;
-            document.getElementById('sofZmanTfilla').textContent = `${item["tfilaagra"]}`;
-            document.getElementById('chatzot').textContent = `${item["hazot"]}`;
-            document.getElementById('chatzotNight').textContent = `${item["hazot"]}`;            
+            document.getElementById('chatzotNight').textContent = `${item["hazot"].substr(0, 5)}`;  
+            document.getElementById('alotHaShachar').textContent = `${item["alot"].substr(0, 5)}`;
+            document.getElementById('misheyakir').textContent = `${item["tzitzit"].substr(0, 5)}`;
+            document.getElementById('sunrise').textContent = `${item["netz"].substr(0, 5)}`;
+            document.getElementById('sofZmanShmaMGA').textContent = `${item["kshmamagen"].substr(0, 5)}`;
+            document.getElementById('sofZmanShma').textContent = `${item["kshmaagra"].substr(0, 5)}`;
+            document.getElementById('sofZmanTfilla').textContent = `${item["tfilaagra"].substr(0, 5)}`;
+            document.getElementById('chatzot').textContent = `${item["hazot"].substr(0, 5)}`;                      
             document.getElementById('minchaGedola').textContent = `${item["minchagdola"]}`;
-            document.getElementById('plagHaMincha').textContent = `${item["netz"]}`;
             //document.getElementById('plagHaMincha').textContent = `${item["minchahol"]}`; -- missing plag mincha
-            document.getElementById('sunset').textContent = `${item["shkia"]}`;
-            document.getElementById('tzeit').textContent = `${item["tzeit"]}`;
+            document.getElementById('sunset').textContent = `${item["shkia"].substr(0, 5)}`;
+            document.getElementById('tzeit').textContent = `${item["tzeit"].substr(0, 5)}`;
             
             // Tfila Hol
             document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"]}`; 
@@ -138,7 +136,7 @@ function displayLeibovitzZmanim() {
         console.log('displayShabbatHours() ends');        
     })
     .catch(error => {
-        console.error('Error fetching the Shabbat hour:', error);
+        console.error('Error fetching the Leiboviz hour:', error);
     });
 }
 
@@ -178,8 +176,7 @@ function displayChol() {
     });
     document.getElementById('shacharit_chol_1').textContent = `${config.shacharit_chol_1}`;
     document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
-    document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;
-    document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;
+    document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;    
      
 }
 
