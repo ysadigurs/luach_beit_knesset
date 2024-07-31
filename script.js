@@ -3,7 +3,6 @@ const config = {
     "shiur_daf_yomi": "07:00",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
-    "mincha_ktana_shabat": "18:30",
     "dvar_tora":"הרב גדעון",
     "shiur_tfila_time": "10:15",
     "shiur_tfila": "הרב בוכריס",
@@ -120,10 +119,10 @@ function displayLeibovitzZmanim() {
             document.getElementById('sofZmanShma').textContent = `${item["kshmaagra"].substr(0, 5)}`;
             document.getElementById('sofZmanTfilla').textContent = `${item["tfilaagra"].substr(0, 5)}`;
             document.getElementById('chatzot').textContent = `${item["hazot"].substr(0, 5)}`;                      
-            document.getElementById('minchaGedola').textContent = `${item["minchagdola"]}`;
+            document.getElementById('minchaGedola').textContent = `${item["minchagdola"].substr(0, 5)}`;
             //document.getElementById('plagHaMincha').textContent = `${item["minchahol"]}`; -- missing plag mincha
             document.getElementById('sunset').textContent = `${item["shkia"].substr(0, 5)}`;
-            document.getElementById('tzeit').textContent = `${item["tzeit"].substr(0, 5)}`;
+            document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
             // Tfila Hol
             document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"].substr(0, 5)}`; 
@@ -178,6 +177,7 @@ function displayChol() {
     document.getElementById('shacharit_chol_1').textContent = `${config.shacharit_chol_1}`;
     document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
     document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;    
+    document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;    
      
 }
 
