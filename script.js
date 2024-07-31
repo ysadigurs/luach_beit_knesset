@@ -104,9 +104,10 @@ function displayLeibovitzZmanim() {
         fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
         .then(response => response.json())
         .then(data => {
-            // Shabat 
+            // Shabat times
             const item =  data.find( record => (record["date"] === parasha_date));
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
+            document.getElementById('mincha_erev').textContent = `${item["minchashabat"].substr(0, 5)}`;
             document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
             document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
@@ -125,8 +126,8 @@ function displayLeibovitzZmanim() {
             document.getElementById('tzeit').textContent = `${item["tzeit"].substr(0, 5)}`;
             
             // Tfila Hol
-            document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"]}`; 
-            document.getElementById('arvit_chol').textContent = `${item["arvithol"]}`; 
+            document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"].substr(0, 5)}`; 
+            document.getElementById('arvit_chol').textContent = `${item["arvithol"].substr(0, 5)}`; 
 
         })
         .catch(error => {
