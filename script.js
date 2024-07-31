@@ -199,6 +199,8 @@ function displayChagim() {
 
 
 function initApp () {
+    // Reload the page every 60 seconds (60000 milliseconds)
+    setInterval(() => {location.reload();}, 60000);
     setInterval(updateClock, 1000);
     updateClock();
     displayLeibovitzZmanim(); 
