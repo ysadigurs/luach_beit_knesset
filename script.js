@@ -3,16 +3,16 @@ const config = {
     "shiur_daf_yomi": "07:00",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
-    "dvar_tora":"הרב גדעון",
+    "dvar_tora":"מוה״ר גדעון בנימין",
     "shiur_tfila_time": "10:15",
     "shiur_tfila": "הרב בוכריס",
     "shiur_shabat_time": "17:45",
-    "shiur_shabat": "הרב אלי, קנאים",
+    "shiur_shabat": "הרב ד״ר חנן יצחקי,על המנהג הזכרת נשמות",
     "shacharit_chol_1":"05:40",
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:30",   
-    "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
+   // "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
 };
 
 function updateClock() {
@@ -92,9 +92,7 @@ function displayLeibovitzZmanim() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        // Hebcal parasha and daily daf yomi
-        parasha = data.items.find( record => record.category === "parashat").hebrew;
-        document.getElementById('parasha').textContent = `${parasha}`;
+        // Hebcal parasha loazi date and daily daf yomi       
         parasha_date = formatDateToDDMMYYYY(new Date(data.items.find( record => record.category === "parashat").date));
         const today = getTodayDate();
         document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
@@ -103,10 +101,16 @@ function displayLeibovitzZmanim() {
         fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
         .then(response => response.json())
         .then(data => {
-            // Shabat times
+            // Get week record
             const item =  data.find( record => (record["date"] === parasha_date));
+            
+            // Shabat times
+            document.getElementById('parasha').textContent = `${item["parasha"].substr(0, 5)}`;
+            document.getElementById('parasha').textContent = `${parasha}`;
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
-            document.getElementById('mincha_erev').textContent = `${item["minchashabat"].substr(0, 5)}`;
+            
+            // mincha erev shabat is 13 minutes after adlaka
+            document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
             document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
             document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
