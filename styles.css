@@ -17,10 +17,12 @@ body {
 
 .card-header {
     text-align: center; /* Align card headers to the center */
+    background-color: transparent;
 }
 
 .card-body {
     text-align: right; /* Ensure the card body text aligns to the right */
+    background-color: transparent;
 }
 
 .custom-container {
