@@ -6,6 +6,8 @@ body {
     text-align: right;
     font-weight: bold;
     line-height: 0.8;
+    height: 100vh;
+    background: linear-gradient(to bottom, blue, green);
 }
 
 #top-image {
