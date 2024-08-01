@@ -32,7 +32,7 @@ body {
 
 .custom-card{
     background-color: transparent !important;
-    border: 5px solid;
+    border: 5px solid gold;
 }
 .custom-card .card-header,
 .custom-card .card-body {
