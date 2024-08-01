@@ -30,6 +30,17 @@ body {
     color: white;
 }
 
+.custom-card{
+    background-color: transparent !important;
+    color: white !important;
+    border: none; /* Optional: Remove the card border */
+}
+.custom-card .card-header,
+.custom-card .card-body {
+    background-color: transparent !important;
+    color: white !important;
+}
+
 /* .custom-line-spacing { */
 /*     line-height: 1.0; /* Adjust the line height as needed */ */
 /* } */
