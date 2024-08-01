@@ -5,7 +5,7 @@ body {
     direction: rtl; 
     text-align: right;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.0;
     height: 100vh;
     background: linear-gradient(to bottom, skyblue, white);
 }
