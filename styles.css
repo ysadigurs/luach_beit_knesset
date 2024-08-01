@@ -7,7 +7,7 @@ body {
     font-weight: bold;
     line-height: 1.2;
     height: 100vh;
-    background: linear-gradient(to bottom, blue, green);
+    background: linear-gradient(to bottom, skyblue, white);
 }
 
 #top-image {
@@ -27,18 +27,17 @@ body {
 
 .custom-container {
     background-color: transparent;
-    color: white;
+   
 }
 
 .custom-card{
     background-color: transparent !important;
-    color: white !important;
-    border: 5px solid white;
+    border: 5px solid;
 }
 .custom-card .card-header,
 .custom-card .card-body {
     background-color: transparent !important;
-    color: white !important;
+    
 }
 
 /* .custom-line-spacing { */
