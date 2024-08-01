@@ -12,7 +12,9 @@ const config = {
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:30",   
-   // "odaha_1": "מזל טוב למשפחת פורת לחתונה של ציפי"
+    "odaha_1": "",
+    "odaha_2": "",
+    "odaha_3": ""
 };
 
 function updateClock() {
@@ -105,10 +107,8 @@ function displayLeibovitzZmanim() {
             const item =  data.find( record => (record["date"] === parasha_date));
             
             // Shabat times
-            document.getElementById('parasha').textContent = `${item["parasha"].substr(0, 5)}`;
-            document.getElementById('parasha').textContent = `${parasha}`;
+            document.getElementById('parasha').textContent = `${item["parasha"]}`;            
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
-            
             // mincha erev shabat is 13 minutes after adlaka
             document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
             document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
@@ -187,7 +187,7 @@ function displayChol() {
 
 
 function displayOdahot() {   
-    document.getElementById('odaha_1').textContent = `${config.odaha_1}`;
+   // document.getElementById('odaha_1').textContent = `${config.odaha_1}`;
 } 
 
 function displayChagim() {    
