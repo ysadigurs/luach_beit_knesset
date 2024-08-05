@@ -41,6 +41,7 @@ function ReadConfig(){
         document.getElementById('chagimFlag').textContent = `${data["chagimFlag"]}`;
         document.getElementById('odaha1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha2').textContent = `${data["odaha2"]}`;
+        location.reload();
     })
     .catch(error => {
         console.error('Error fetching the config file', error);
