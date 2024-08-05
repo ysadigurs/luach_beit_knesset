@@ -24,37 +24,37 @@ Fields to configure:
         <form>
           <div class="form-group">
             <label for="dvarTora">Dvar tora person:</label>
-            <input type="string" class="form-control" id="dvarTora" placeholder="Enter dvar tora name" required>
+            <input type="string" class="form-control" id="dvarTora" name="dvarTora">
           </div>
 
           <div class="form-group">
             <label for="shiurAfterTfilaFlag">Is there a shiur after tfila this week?</label>
-            <input type="checkbox" class="form-control" id="shiurAfterTfilaFlag" placeholder="Enter shiur after tfila" required>
+            <input type="checkbox" class="form-control" id="shiurAfterTfilaFlag" name="shiurAfterTfilaFlag">
           </div>
 
           <div class="form-group">
             <label for="shiurShabatTime">Shiur Shabat time:</label>
-            <input type="string" class="form-control" id="shiurShabatTime" placeholder="Enter shiur Shabat time (HH:MM)" required>
+            <input type="string" class="form-control" id="shiurShabatTime" name="shiurShabatTime">
           </div>
 
           <div class="form-group">
             <label for="shiurShabatTitle">Shiur Shabat name and title:</label>
-            <input type="string" class="form-control" id="shiurShabatTitle" placeholder="Enter shiur Shabat title" required>
+            <input type="string" class="form-control" id="shiurShabatTitle" name="shiurShabatTitle">
           </div>
 
           <div class="form-group">
             <label for="chagimFlag">Is there a chagim this week?</label>
-            <input type="checkbox" class="form-control" id="chagimFlag" placeholder="Is there a chagim this week?" optional>
+            <input type="checkbox" class="form-control" id="chagimFlag" name="chagimFlag">
           </div>
 
           <div class="form-group">
             <label for="timePeriod">Enter Odaha 1:</label>
-            <input type="string" class="form-control" id="odaha1" placeholder="Enter Odaha 1" optional>
+            <input type="string" class="form-control" id="odaha1" name="odaha1">
           </div>
 
           <div class="form-group">
             <label for="timePeriod">Enter Odaha 2:</label>
-            <input type="string" class="form-control" id="odaha2" placeholder="Enter Odaha 2" optional>
+            <input type="string" class="form-control" id="odaha2" name="odaha2">
           </div>
 
           <button type="button" class="btn btn-primary btn-block" onclick="storeConfig()">Save Configuration</button>

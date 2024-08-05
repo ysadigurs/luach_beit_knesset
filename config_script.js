@@ -29,7 +29,7 @@ function storeConfig() {
 
 }
 
-function ReadConfig(){
+document.addEventListener('DOMContentLoaded', (event) => {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/config.json")
     .then(response => response.json())
     .then(data => {
@@ -40,13 +40,9 @@ function ReadConfig(){
         document.getElementById('shiurShabatTitle').textContent = `${data["shiurShabatTitle"]}`;
         document.getElementById('chagimFlag').textContent = `${data["chagimFlag"]}`;
         document.getElementById('odaha1').textContent = `${data["odaha1"]}`;
-        document.getElementById('odaha2').textContent = `${data["odaha2"]}`;
-        location.reload();
+        document.getElementById('odaha2').textContent = `${data["odaha2"]}`;        
     })
     .catch(error => {
         console.error('Error fetching the config file', error);
     });       
-
 }
-
-ReadConfig();
