@@ -232,7 +232,7 @@ function initApp () {
     displayLeibovitzZmanim(); 
     // displayZmanim();   - Replaced by Leibovitz
     displayShabbatStatic();
-    displayShiurim();
+    displayConfig();
     displayChol();
     displayChagim();
 }
