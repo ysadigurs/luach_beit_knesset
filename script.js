@@ -1,20 +1,11 @@
 const config = {
     "shacharit_shabat_1": "06:25",
-    "shiur_daf_yomi": "07:00",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
-    "dvar_tora":"מוה״ר גדעון בנימין",
-    "shiur_tfila_time": "10:15",
-    "shiur_tfila": "הרב בוכריס",
-    "shiur_shabat_time": "17:45",
-    "shiur_shabat": "הרב ד״ר חנן יצחקי,על המנהג הזכרת נשמות",
     "shacharit_chol_1":"05:40",
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
-    "mincha_gdola_chol": "13:30",   
-    "odaha_1": "",
-    "odaha_2": "",
-    "odaha_3": ""
+    "mincha_gdola_chol": "13:30"   
 };
 
 function updateClock() {
@@ -174,13 +165,24 @@ function displayShabbatStatic() {
     document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
 }
 
-function displayShiurim() {
-    document.getElementById('shiur_daf_yomi').textContent = `${config.shiur_daf_yomi}`;
-    document.getElementById('dvar_tora').textContent = `${config.dvar_tora}`;
-    document.getElementById('shiur_tfila_time').textContent = `${config.shiur_tfila_time}`;
-    document.getElementById('shiur_tfila').textContent = `${config.shiur_tfila}`;
-    document.getElementById('shiur_shabat_time').textContent = `${config.shiur_shabat_time}`; 
-    document.getElementById('shiur_shabat').textContent = `${config.shiur_shabat}`;
+function displayConfig() {
+    fetch("https://ysadigurs.github.io/luach_beit_knesset/config.json")
+    .then(response => response.json())
+    .then(data => {
+        // Read json data
+        document.getElementById('dvar_tora').value = data["dvarTora"];
+        document.getElementById('shiur_tfila_time').value = data["shiurAfterTfilaTime"];
+        document.getElementById('shiur_tfila').value = data["shiurAfterTfila"];        
+        document.getElementById('shiur_shabat_time').value = data["shiurShabatTime"];
+        document.getElementById('shiur_shabat').value = data["shiurShabatTitle"];
+        document.getElementById('shiur_daf_yomi').value = data["shiurDafYomiTime"];
+        document.getElementById('odaha_1').value = data["odaha1"];
+        document.getElementById('odaha_2').value = data["odaha_2"];
+    })
+    .catch(error => {
+        console.error('Error fetching config.json', error);
+    });   
+    
 }
 
 function getTodayDate() {
@@ -210,10 +212,6 @@ function displayChol() {
 }
 
 
-function displayOdahot() {   
-   // document.getElementById('odaha_1').textContent = `${config.odaha_1}`;
-} 
-
 function displayChagim() {    
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
@@ -237,7 +235,6 @@ function initApp () {
     displayShiurim();
     displayChol();
     displayChagim();
-    displayOdahot();
 }
 
 initApp();
