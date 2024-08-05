@@ -146,7 +146,7 @@ function displayLeibovitzZmanim() {
             const currentDay = getCurrentDay();
             if (currentDay === "Friday" || currentDay === "Saturday") {
 
-                const nextItem =  data.find( record => (record["date"] === addDays(parasha_date, 7).toLocaleDateString());
+                const nextItem =  data.find( record => (record["date"] === addDays(parasha_date, 7).toLocaleDateString()));
                 document.getElementById('mincha_ktana_chol').textContent = `${nextItem["minchahol"].substr(0, 5)}`; 
                 document.getElementById('arvit_chol').textContent = `${nextItem["arvithol"].substr(0, 5)}`; 
 
