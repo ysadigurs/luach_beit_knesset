@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     .then(response => response.json())
     .then(data => {
         // Read json data
-        document.getElementById('dvarTora').textContent = `${data["dvarTora"]}`;
-        document.getElementById('shiurAfterTfilaFlag').textContent = `${data["shiurAfterTfilaFlag"]}`;
-        document.getElementById('shiurShabatTime').textContent = `${data["shiurShabatTime"]}`;
-        document.getElementById('shiurShabatTitle').textContent = `${data["shiurShabatTitle"]}`;
-        document.getElementById('chagimFlag').textContent = `${data["chagimFlag"]}`;
-        document.getElementById('odaha1').textContent = `${data["odaha1"]}`;
-        document.getElementById('odaha2').textContent = `${data["odaha2"]}`;        
+        document.getElementById('dvarTora').value = data["dvarTora"];
+        document.getElementById('shiurAfterTfilaFlag').value = data["shiurAfterTfilaFlag"];
+        document.getElementById('shiurShabatTime').value = data["shiurShabatTime"];
+        document.getElementById('shiurShabatTitle').value = data["shiurShabatTitle"];
+        document.getElementById('chagimFlag').value = data["chagimFlag"];
+        document.getElementById('odaha1').value = data["odaha1"];
+        document.getElementById('odaha2').value = data["odaha2"];        
     })
     .catch(error => {
         console.error('Error fetching the config file', error);
