@@ -7,7 +7,7 @@ body {
     font-weight: bold;
     line-height: 1.0;
     height: 100vh;
-    background: linear-gradient(to bottom, skyblue, white);
+    background: skyblue;
 }
 
 #top-image {
@@ -32,7 +32,7 @@ body {
 
 .custom-card{
     background-color: transparent !important;
-    border: 5px solid gold;
+    border: 5px solid black;
     border-radius: 15px; 
 }
 .custom-card .card-header,

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Revenue Calculator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+
+<!-- 
+Fields to configure:
+- Dvar torah 
+- Shiur after tfila flag
+- Shiur Shabat 
+- Chagim
+- Odaha1
+- Odaha2
+-->
+<body>
+  <div class="container">
+    <h1 class="text-center">Luach Beit Knessesset Configuration</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="dvarTora">Dvar tora:</label>
+            <input type="string" class="form-control" id="dvarTora" placeholder="Enter dvar tora name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="shiurAfterTfilaFlag">Shiur after tfila (true/false):</label>
+            <input type="checkbox" class="form-control" id="shiurAfterTfilaFlag" placeholder="Enter shiur after tfila" required>
+          </div>
+
+          <div class="form-group">
+            <label for="shiurShabat">Shiur Shabat time:</label>
+            <input type="string" class="form-control" id="shiurShabatTime" placeholder="Enter shiur Shabat time" required>
+          </div>
+
+          <div class="form-group">
+            <label for="shiurShabat">Shiur Shabat name and title:</label>
+            <input type="checkbox" class="form-control" id="shiurShabatTitle" placeholder="Enter shiur Shabat title" required>
+          </div>
+
+          <div class="form-group">
+            <label for="chagimFlag">Chagim:</label>
+            <input type="string" class="form-control" id="chagimFlag" placeholder="Enter show Chagim message" optional>
+          </div>
+
+          <div class="form-group">
+            <label for="timePeriod">Odaha 1:</label>
+            <input type="string" class="form-control" id="odaha1" placeholder="Enter Odaha 1" optional>
+          </div>
+
+          <div class="form-group">
+            <label for="timePeriod">Odaha 2:</label>
+            <input type="string" class="form-control" id="odaha2" placeholder="Enter Odaha 2" optional>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" onclick="storeConfig()">Save Configuration</button>
+
+          <!--
+          <div class="form-group">
+            <label for="revenueResult">Revenue:</label>
+            <span type="number" class="form-control" id="revenueResult" readonly></span>
+          </div>
+          -->
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="config_script.js"></script>
+</body>
+</html>
+
+</body>

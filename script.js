@@ -85,6 +85,19 @@ function formatDateToDDMMYYYY(date) {
     return `${day}-${month}-${year}`; // Format as dd-mm-yyyy
 }
 
+function getCurrentDay() {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const currentDate = new Date();
+    const currentDayIndex = currentDate.getDay();
+    const currentDayName = daysOfWeek[currentDayIndex];
+    return currentDayName;
+}
+
+function addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
 
 let parasha_date = null;
 
@@ -129,8 +142,19 @@ function displayLeibovitzZmanim() {
             document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
             // Tfila Hol
-            document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"].substr(0, 5)}`; 
-            document.getElementById('arvit_chol').textContent = `${item["arvithol"].substr(0, 5)}`; 
+            // Change to next week on Fridays.
+            const currentDay = getCurrentDay();
+            if (currentDay === "Friday" || currentDay === "Saturday") {
+
+                const nextItem =  data.find( record => (record["date"] === addDays(parasha_date, 7).toLocaleDateString());
+                document.getElementById('mincha_ktana_chol').textContent = `${nextItem["minchahol"].substr(0, 5)}`; 
+                document.getElementById('arvit_chol').textContent = `${nextItem["arvithol"].substr(0, 5)}`; 
+
+            }
+            else {
+                document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"].substr(0, 5)}`; 
+                document.getElementById('arvit_chol').textContent = `${item["arvithol"].substr(0, 5)}`; 
+            }
 
         })
         .catch(error => {
