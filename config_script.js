@@ -44,5 +44,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     })
     .catch(error => {
         console.error('Error fetching the config file', error);
-    });       
-}
+    });
+});
