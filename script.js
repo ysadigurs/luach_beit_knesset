@@ -177,7 +177,7 @@ function displayConfig() {
         document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
         document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
-        document.getElementById('odaha_2').textContent = `${data["odaha_2"]}`;
+        document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;
     })
     .catch(error => {
         console.error('Error fetching config.json', error);
