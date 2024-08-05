@@ -170,14 +170,14 @@ function displayConfig() {
     .then(response => response.json())
     .then(data => {
         // Read json data
-        document.getElementById('dvar_tora').value = data["dvarTora"];
-        document.getElementById('shiur_tfila_time').value = data["shiurAfterTfilaTime"];
-        document.getElementById('shiur_tfila').value = data["shiurAfterTfila"];        
-        document.getElementById('shiur_shabat_time').value = data["shiurShabatTime"];
-        document.getElementById('shiur_shabat').value = data["shiurShabatTitle"];
-        document.getElementById('shiur_daf_yomi').value = data["shiurDafYomiTime"];
-        document.getElementById('odaha_1').value = data["odaha1"];
-        document.getElementById('odaha_2').value = data["odaha_2"];
+        document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
+        document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
+        document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
+        document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
+        document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
+        document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
+        document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
+        document.getElementById('odaha_2').textContent = `${data["odaha_2"]}`;
     })
     .catch(error => {
         console.error('Error fetching config.json', error);
