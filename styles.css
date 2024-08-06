@@ -57,13 +57,13 @@ body {
 }
 
 .row-custom {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -150px;
+    margin-right: -150px;
 }
 
 .col-custom {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .mt-header {
