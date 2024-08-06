@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Alef', sans-serif;
-    background-color: #f5f5f5; /* was before #f0f0f0 */
     direction: rtl; 
     text-align: right;
     font-weight: bold;
