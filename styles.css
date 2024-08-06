@@ -7,10 +7,33 @@ body {
     line-height: 1.0;
     height: 100vh;
     background: whitesmoke;
+    /* background image
     background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
-    background-size: cover; /* or 'contain', 'auto' */
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center center;
+    */
+
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
+    background-size: cover;
+    background-position: center;
+}
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Text color */
 }
 
 #top-image {
