@@ -56,6 +56,16 @@ body {
    
 }
 
+.row-custom {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-custom {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .mt-header {
     height: 200px;
     margin-top: 20px;    
