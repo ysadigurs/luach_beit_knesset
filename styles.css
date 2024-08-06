@@ -76,7 +76,7 @@ body {
 .flex-item-chol {
     height: 200px;    
     margin-top: 100px;
-    margin-left: 200px;    
+    margin-left: 400px;    
 }
 
 .flex-item-odahot {
@@ -86,7 +86,7 @@ body {
     
 }
 
-
+/*
 .custom-card{
     background-color: transparent !important;
     border: 5px solid black;
@@ -97,6 +97,7 @@ body {
     background-color: transparent !important;
     
 }
+*/
 
 /* .custom-line-spacing { */
 /*     line-height: 1.0; /* Adjust the line height as needed */ */
