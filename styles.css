@@ -8,6 +8,10 @@ body {
     line-height: 1.0;
     height: 100vh;
     background: whitesmoke;
+    background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
+    background-size: cover; /* or 'contain', 'auto' */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 #top-image {
