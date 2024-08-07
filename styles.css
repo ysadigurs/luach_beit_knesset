@@ -33,7 +33,7 @@ body {
     /* Default styles for all screen sizes */
     background-color: #f8f9fa;
 }
-@media (min-width: 300px) {
+@media (min-width: 200px) {
     .background-image {
         /* Styles for large screens and up */
         background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
