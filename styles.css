@@ -57,12 +57,12 @@ body {
 }
 
 .row-custom {
-    margin-left: -150px;
-    margin-right: -150px;
+    margin-left: -250px;
+    margin-right: -350px;
 }
 
 .col-custom {
-    padding-left: 150px;
+    padding-left: 50px;
     padding-right: 150px;
 }
 
