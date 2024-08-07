@@ -15,11 +15,9 @@ body {
     */
 
 }
-/*
+
 .background-image {
     background-color: #f8f9fa;
-}
-
     position: relative;
     width: 100%;
     height: 100vh;
@@ -27,21 +25,22 @@ body {
     background-size: cover;
     background-position: center;
 }
-*/
 
-.background-image {
-    /* Default styles for all screen sizes */
+
+/* 
+        
+.background-image {  
     background-color: #f8f9fa;
 }
 @media (min-width: 200px) {
     .background-image {
-        /* Styles for large screens and up */
         background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
     }
 }
+*/
 
 
 .overlay-content {
