@@ -7,12 +7,7 @@ body {
     line-height: 1.0;
     height: 100vh;
     background: whitesmoke;
-    /* background image
-    background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background.png');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center center;
-    */
+    font-size: 24px; 
 
 }
 
