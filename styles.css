@@ -70,7 +70,8 @@ body {
    
 }
 
-.row-custom {    
+.row-custom {
+    margin-left: -250px;
     margin-right: -450px;
 }
 
