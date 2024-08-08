@@ -81,7 +81,7 @@ body {
 }
 
 .col-date {    
-    padding: 15px;  
+    color: brown; /* Text color */
 }
 
 .col-zmanim {
