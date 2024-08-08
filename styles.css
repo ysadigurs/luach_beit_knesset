@@ -80,8 +80,8 @@ body {
     padding-right: 150px;
 }
 
-.row-date {
-    margin-right: 650px;    
+.col-date {    
+    padding: 15px;  
 }
 
 .col-zmanim {
