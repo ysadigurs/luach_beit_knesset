@@ -44,6 +44,7 @@ body {
     justify-content: flex-start;
 }
 
+/*
 .overlay-content {
     position: absolute;
     top: 0;
@@ -53,8 +54,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Text color */
+    color: white;
 }
+*/
 
 #top-image {
     width: 100%;
