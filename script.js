@@ -251,7 +251,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
-    setInterval(() => {autoScroll();}, 50);
+    //setInterval(() => {autoScroll();}, 50);
 
 }
 
