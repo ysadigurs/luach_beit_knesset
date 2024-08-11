@@ -21,8 +21,9 @@ body {
     background-position: center;
 }
 
-.content {
-    height: 200vh; /* Make the content height 200% of the viewport height */
+.scrollable-column {
+    max-height: 200vh; /* Set the height you want for the scrollable area */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the height */
 }
 /* 
         

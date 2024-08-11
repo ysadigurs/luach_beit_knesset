@@ -224,25 +224,21 @@ function displayChagim() {
 }
 
 
-let scrollPosition = 0;
-const scrollStep = 1; // Adjust the scroll speed
-const delay = 20; // Delay between each scroll step in milliseconds
-const pauseDuration = 2000; // Pause duration at the bottom before restarting
+const scrollableColumn = document.getElementById('scrollable-column');
+let scrollTop = 0;
 
 function autoScroll() {
-    window.scrollTo(0, scrollPosition);
-    scrollPosition += scrollStep;
+    const maxScrollTop = scrollableColumn.scrollHeight - scrollableColumn.clientHeight;
 
-    // If reached the bottom, pause and reset to the top
-    if (scrollPosition >= document.body.scrollHeight - window.innerHeight) {
-        setTimeout(() => {
-            scrollPosition = 0;
-            setTimeout(autoScroll, delay);
-        }, pauseDuration);
-    } else {
-        setTimeout(autoScroll, delay);
+    scrollTop += 1; // Scroll down by 1px per interval
+
+    if (scrollTop > maxScrollTop) {
+            scrollTop = 0; // Reset scroll position to top
     }
+    scrollableColumn.scrollTo(0, scrollTop);
+
 }
+
 
 function initApp () {
     // Reload the page every 60 seconds (60000 milliseconds)
@@ -255,8 +251,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
-
-    window.onload = autoScroll;
+    setInterval(() => {autoScroll();}, 50);
 
 }
 
