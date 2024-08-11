@@ -21,12 +21,12 @@ body {
     background-position: center;
 }
 
+/*        
 .scrollable-column {
-    max-height: 200vh; /* Set the height you want for the scrollable area */
-    overflow-y: auto; /* Add vertical scroll if content exceeds the height */
+    max-height: 200vh;
+    overflow-y: auto;     
 }
-/* 
-        
+ 
 .background-image {  
     background-color: #f8f9fa;
 }
@@ -94,14 +94,14 @@ body {
     margin-top: 180px;     
 }
 
+.col-chol {    
+    margin-top: 180px;     
+}
+
 .mt-shabbat {
     height: 300px;   
     margin-top: 200px;
     margin-left: 200px;    
-}
-
-.col-chol {    
-    margin-top: 180px;     
 }
 
 .mt-odahot {
@@ -114,33 +114,26 @@ body {
 
 .custom-card{
     background-color: transparent !important;
-    /*
-    border: 5px solid black;
-    border-radius: 15px; 
-    */
 }
+
 .custom-card .card-header,
 .custom-card .card-body {
     background-color: transparent !important;
     
 }
 
-
-/* .custom-line-spacing { */
-/*     line-height: 1.0; /* Adjust the line height as needed */ */
-/* } */
-
 .text-wrap {
     white-space: normal; /* Ensures text wraps within the column */
 }
 
+/*
 .bg-image {
-    background-image: url('ארון\ הקודש\ 1.jpg'); /* Replace with your image URL */
+    background-image: url('ארון\ הקודש\ 1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 50px; /* Adjust padding as needed */
-    color: white; /* Ensure text is visible on the background */
-    border-radius: 15px; /* Optional: add rounded corners */
+    padding: 50px; 
+    color: white; 
+    border-radius: 15px; 
   }
-
+*/
