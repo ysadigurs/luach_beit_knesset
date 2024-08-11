@@ -40,6 +40,9 @@ body {
 }
 */
 
+.align-left {
+    justify-content: flex-start;
+}
 
 .overlay-content {
     position: absolute;
