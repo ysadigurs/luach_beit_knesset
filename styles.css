@@ -16,7 +16,7 @@ body {
     width: 100%; */
     height: 100vh; 
     background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background_blue.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     margin: 0;
     padding: 0;
