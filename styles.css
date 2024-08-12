@@ -79,20 +79,6 @@ body {
    
 }
 
-.overlay {
-    position: relative;
-    height: 100vh;
-    background-image: url('https://via.placeholder.com/1500x1000');
-    background-size: cover;
-    background-position: center;
-}
-.overlay-content {
-    position: absolute;
-    top: 50px; /* Adjust the top margin as needed */
-    width: 100%; /* Ensure the content spans the full width */
-    color: white;
-}
-
 .row-custom {
     margin-left: -250px;
     margin-right: -450px;
