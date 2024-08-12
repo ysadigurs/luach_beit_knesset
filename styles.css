@@ -92,7 +92,7 @@ body {
 */
 
 .col-date {    
-    background-color: transparent;
+    background-color: transparent !important;
     color: brown; /* Text color */
 }
 
