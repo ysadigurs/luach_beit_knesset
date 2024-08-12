@@ -1,5 +1,4 @@
 body {
-    margin: 0;
     font-family: 'Alef', sans-serif;
     direction: rtl; 
     text-align: right;
@@ -78,18 +77,22 @@ body {
     color: white;
    
 }
-
+/*
 .row-custom {
     margin-left: -250px;
     margin-right: -450px;
 }
+*/
 
+/*
 .col-custom {
     padding-left: 50px;
     padding-right: 150px;
 }
+*/
 
 .col-date {    
+    background-color: transparent;
     color: brown; /* Text color */
 }
 
