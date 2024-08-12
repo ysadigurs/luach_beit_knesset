@@ -18,6 +18,7 @@ body {
     background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background_blue.png');
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
 }
