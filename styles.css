@@ -78,8 +78,12 @@ body {
 .custom-container {
     background-color: transparent;
     color: white;
-   
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
 }
+
 /*
 .row-custom {
     margin-left: -250px;
