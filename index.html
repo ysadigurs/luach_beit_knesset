@@ -14,23 +14,28 @@
 </head>
 
 <body>
-    <div class="background-image">
-        <div class="container custom-container">
-            <div class="row h-100 justify-content-center align-items-center">                
-                <div class="card custom-card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-date"><span id="today"></span></div>
-                            <div class="col-date"><span id="digital-clock"></span></div>
-                            <div class="col-date"><span id="daf_yomi"></span></div>
-                        </div>
+            <div class="container-fluid ">
+                <div class="row no-gutters text-primary h1">
+                    <div class="col" style="text-align: center; border: none;">
+                        <p>בית כנסת זכור אברהם מרכזי - נוף איילון</p>
                     </div>
                 </div>
-                
             </div>
-            <div class="row h-100 justify-content-between align-items-center">
-                <div class="col-md-4">
-                    <div class="card h-100 custom-card">
+            <div class="row mt-4 no-gutters">
+                <div class="col-md-4 col-12">
+                    <div class="card custom-card border-0 mr-4"><div class="card-body"><span id="today"></span></div></div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="card custom-card border-0 mr-4"><div class=card-body><span id="digital-clock"></span></div></div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="card custom-card border-0 mr-4 ml-4"><div class=card-body><span id="daf_yomi"></span></div></div>
+                </div>
+            </div>
+            <div class="row mt-4 no-gutters">
+                <div class="col-md-4 col-12">
+                    <div class="card h-100 custom-card mr-4">
+                        <div class="card-header"><p>זמנים</p></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
@@ -112,8 +117,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 custom-card">
+                <div class="col-md-4 col-12">
+                    <div class="card h-100 custom-card mr-4">
+                        <div class="card-header"><p>שבת</p></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
@@ -204,8 +210,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card custom-card">
+                <div class="col-md-4 col-12">
+                    <div class="card custom-card mr-4 ml-4">
+                        <div class="card-header"><p>חול</p></div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
@@ -247,7 +254,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card custom-card">
+                    <div class="card custom-card mt-5 mr-4 ml-4">
                         <div class="card-body">
                             <p id="chagim_1"></p>
                             <p id="odaha_1"></p>
@@ -266,6 +273,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 

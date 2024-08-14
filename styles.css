@@ -5,15 +5,38 @@ body {
     font-weight: bold;
     line-height: 1.0;
     height: 100vh;
-    background: whitesmoke;
+    background: #9dc4ed;
     font-size: 24px; 
+    color: gold;
 
 }
+
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+.row.no-gutters > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+/*
 
 .background-image {
     background-color: #f8f9fa;
     position: relative; 
-    /* width: 100%; */
+    width: 100%;
     height: 100vh; 
     background-image: url('https://ysadigurs.github.io/luach_beit_knesset/background_blue.png');
     background-size: cover;
@@ -22,6 +45,7 @@ body {
     margin: 0;
     padding: 0;
 }
+*/
 
 /*        
 .scrollable-column {
@@ -41,11 +65,11 @@ body {
     }
 }
 */
-
+/*
 .align-left {
     justify-content: flex-start;
 }
-
+*/
 /*
 .overlay-content {
     position: absolute;
@@ -59,37 +83,39 @@ body {
     color: white;
 }
 */
-
+/*
 #top-image {
     width: 100%;
     height: auto;
 }
+*/
+
+.no-border .col {
+    border: none;
+}
 
 .card-header {
     text-align: center; /* Align card headers to the center */
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 .card-body {
-    text-align: right; /* Ensure the card body text aligns to the right */
-    background-color: transparent;
+    text-align: right; 
+    /*background: transparent;*/
 }
 
-.custom-container {
-    background-color: transparent;
-    color: white;
+.custom-container {    
+    background: #9dc4ed;  
+    color: blue;
     height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;   
 }
 
-/*
-.row-custom {
-    margin-left: -250px;
-    margin-right: -450px;
+.align-right {
+    justify-content: flex-end; /* Flexbox utility to align right */
 }
-*/
 
 /*
 .col-custom {
@@ -111,29 +137,16 @@ body {
     margin-top: 180px;     
 }
 
-.mt-shabbat {
-    height: 300px;   
-    margin-top: 200px;
-    margin-left: 200px;    
-}
-
-.mt-odahot {
-    height: 200px;
-    margin-top: 400px;
-    margin-left: 100px;    
-    
-}
-
-
 .custom-card{
-    background-color: transparent !important;
+    background: linear-gradient(to right, #5de0e6, #004aed);    
 }
 
 .custom-card .card-header,
 .custom-card .card-body {
-    background-color: transparent !important;
-    
+    background: linear-gradient(to right, #5de0e6, #004aed);
+    margin-right: 10px;    
 }
+
 
 .text-wrap {
     white-space: normal; /* Ensures text wraps within the column */
