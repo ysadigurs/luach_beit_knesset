@@ -5,7 +5,7 @@ body {
     font-weight: bold;
     line-height: 1.0;
     height: 100vh;
-    background: #CFE2F6;
+    background: white; /* #CFE2F6; */
     font-size: 24px; 
     color: black;    
 
@@ -117,7 +117,7 @@ body {
 }
 
 .custom-container {    
-    background: #9dc4ed;  
+    background: white; /* #9dc4ed;  */
     color: blue;
     height: 100vh; 
     display: flex;
@@ -150,13 +150,13 @@ body {
 }
 
 .custom-card{
-    background: linear-gradient(to right, rgba(169, 238, 241), rgb(198, 216, 239));   /* #A9EEF1 = rgba(169, 238, 241), #C6D8EF = rga(198, 216, 239) */     
+    background: rgba(255, 255, 255, 0.5); /* linear-gradient(to right, rgba(169, 238, 241), rgb(198, 216, 239));    #A9EEF1 = rgba(169, 238, 241), #C6D8EF = rga(198, 216, 239) */     
 }
 
 .custom-card .card-header,
 .custom-card .card-body {
-    background: linear-gradient(to right, rgba(169, 238, 241),rgba(198, 216, 239));
-    margin-right: 10px;       
+    background: rgba(255, 255, 255, 0.5); /* was linear-gradient(to right, rgba(169, 238, 241),rgba(198, 216, 239)); */
+    margin-right: 10px;         
 }
 
 
