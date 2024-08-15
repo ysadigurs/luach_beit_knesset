@@ -30,6 +30,16 @@ body {
     padding-left: 0;
 }
 
+.thick-border {    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+    border-radius: 15px; /* Adds rounded corners */
+}
+
+.luach-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: brown;
+}
 
 /*
 
