@@ -5,9 +5,9 @@ body {
     font-weight: bold;
     line-height: 1.0;
     height: 100vh;
-    background: #9dc4ed;
+    background: #CFE2F6;
     font-size: 24px; 
-    color: gold;
+    color: black;
 
 }
 
@@ -17,7 +17,7 @@ body {
 }
 .box {
     background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    border: 2px solid #F4AE33;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -138,12 +138,12 @@ body {
 }
 
 .custom-card{
-    background: linear-gradient(to right, #5de0e6, #004aed);    
+    background: linear-gradient(to right, #A9EEF1, #C6D8EF);    
 }
 
 .custom-card .card-header,
 .custom-card .card-body {
-    background: linear-gradient(to right, #5de0e6, #004aed);
+    background: linear-gradient(to right, #A9EEF1, #C6D8EF);
     margin-right: 10px;    
 }
 
