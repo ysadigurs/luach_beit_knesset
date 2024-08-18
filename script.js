@@ -256,10 +256,10 @@ function displayWeather () {
         document.getElementById('temperature').textContent = `${result.current.temp_c}` + " מעלות ";
      
         console.log('Request made with no-cors mode');
-    }
-    .catch (error) {
+    })
+    .catch (error => {
         console.error("temperature error:", error);
-    }
+    });
 }
 
 function initApp () {
