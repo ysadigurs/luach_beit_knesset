@@ -239,10 +239,30 @@ function autoScroll() {
 
 }
 
+// Nof hayalon coordinates 31°52′07″N 34°59′20″E from Wikiepedia convert to approximately 31.8686°N latitude and 34.9889°E longitude.
+// Same as Lod
+
+async function displayWeather () {
+    const url = "http://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no";
+    const options = {
+        method: "GET",
+    };
+
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+
+        document.getElementById('temperature').textContent = `${result.current.temp_c}` + " מעלות ";
+        console.log("temperature error", result);
+    } 
+    catch (error) {
+        console.error("temperature error:", error);
+    }
+}
 
 function initApp () {
     // Reload the page every 60 seconds (60000 milliseconds)
-    setInterval(() => {location.reload();}, 60000);
+    setInterval(() => {location.reload();}, 5*60000);
     setInterval(updateClock, 1000);
     updateClock();
     displayLeibovitzZmanim(); 
@@ -251,6 +271,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
+    displayWeather();
     //setInterval(() => {autoScroll();}, 50);
 
 }
