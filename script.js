@@ -241,10 +241,14 @@ function autoScroll() {
 
 // Nof hayalon coordinates 31°52′07″N 34°59′20″E from Wikiepedia convert to approximately 31.8686°N latitude and 34.9889°E longitude.
 // Same as Lod
-// https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no
+// Attempts: 
+// 1. https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no - CORS error
+// 2. with proxy: http://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no - Connection refused
+// 3. https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true
+
 
 function displayWeather () {
-    fetch("http://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true" , {
         method: 'GET', // Use the appropriate HTTP method
         headers: {
           'Content-Type': 'application/json' // Optional: Only necessary if you're sending a request body
@@ -253,7 +257,7 @@ function displayWeather () {
     })   
     .then(response => {
         const result = response.json();
-        document.getElementById('temperature').textContent = `${result.current.temp_c}` + " מעלות ";
+        document.getElementById('temperature').textContent = `${result.current_weather.temperature}` + " מעלות ";
      
         console.log('Request made with no-cors mode');
     })
