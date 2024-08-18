@@ -243,9 +243,8 @@ function autoScroll() {
 // Same as Lod
 
 function displayWeather () {
-    fetch("https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
+    fetch("https://cors-anywhere.herokuapp.com/https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
         method: 'GET', // Use the appropriate HTTP method
-        mode: 'no-cors', // This sets the mode to no-cors
         headers: {
           'Content-Type': 'application/json' // Optional: Only necessary if you're sending a request body
           // Add other headers as needed
