@@ -250,7 +250,7 @@ function autoScroll() {
 function displayWeather () {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true" , {
         method: 'GET', // Use the appropriate HTTP method
-        mode: 'no-cors',
+        mode: 'same-origin',
         headers: {
           'Content-Type': 'application/json' // Optional: Only necessary if you're sending a request body
           // Add other headers as needed
