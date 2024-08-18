@@ -243,7 +243,7 @@ function autoScroll() {
 // Same as Lod
 
 async function displayWeather () {
-    const url = "http://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no";
+    const url = "https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no";
     const options = {
         method: "GET",
     };
