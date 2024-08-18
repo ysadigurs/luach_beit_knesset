@@ -244,9 +244,9 @@ function autoScroll() {
 // Attempts: 
 // 1. https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no - CORS error
 // 2. with proxy: http://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no - Connection refused
-// 3. https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true
-
-
+// 3. https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true - Also CORS error
+// 
+/*
 function displayWeather () {
     fetch("https://api.open-meteo.com/v1/forecast?latitude=31.8686&longitude=34.9889&current_weather=true" , {
         method: 'GET', // Use the appropriate HTTP method
@@ -266,6 +266,7 @@ function displayWeather () {
         console.error("temperature error:", error);
     });
 }
+*/
 
 function initApp () {
     // Reload the page every 60 seconds (60000 milliseconds)
@@ -278,7 +279,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
-    displayWeather();
+    //displayWeather(); - CORS problems
     //setInterval(() => {autoScroll();}, 50);
 
 }
