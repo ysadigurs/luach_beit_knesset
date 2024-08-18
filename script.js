@@ -249,12 +249,18 @@ function autoScroll() {
 
 
 function displayWeather () {
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid=***REMOVED***")
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid=***REMOVED***", {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include'
+    })
     .then(response => {
         const result = response.json();
         document.getElementById('temperature').textContent = `${result.main.temp}` + " מעלות ";
      
-        console.log('Request made with no-cors mode');
+        console.log('Request made with credentials: include');
     })
     .catch (error => {
         console.error("temperature error:", error);
