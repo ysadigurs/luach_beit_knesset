@@ -253,7 +253,7 @@ function displayWeather () {
         mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json', // Optional: Only necessary if you're sending a request body
-          'Origin': 'null'
+          'Origin': null
         }
     })   
     .then(response => {
