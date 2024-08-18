@@ -279,7 +279,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
-    displayWeather(); 
+   // displayWeather(); - CORS issue
     //setInterval(() => {autoScroll();}, 50);
 
 }
