@@ -254,7 +254,7 @@ function displayWeather () {
         headers: {
             'Content-Type': 'application/json'
           },
-          credentials: 'include'
+          credentials: 'false'
     })
     .then(response => {
         const result = response.json();
