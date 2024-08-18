@@ -249,13 +249,7 @@ function autoScroll() {
 
 
 function displayWeather () {
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid=***REMOVED***", {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-          },
-          credentials: 'false'
-    })
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid=***REMOVED***")
     .then(response => {
         const result = response.json();
         document.getElementById('temperature').textContent = `${result.main.temp}` + " מעלות ";
@@ -279,7 +273,7 @@ function initApp () {
     displayConfig();
     displayChol();
     displayChagim();
-    displayWeather(); // - CORS issue
+    //displayWeather(); // - CORS issue
     //setInterval(() => {autoScroll();}, 50);
 
 }
