@@ -241,9 +241,10 @@ function autoScroll() {
 
 // Nof hayalon coordinates 31°52′07″N 34°59′20″E from Wikiepedia convert to approximately 31.8686°N latitude and 34.9889°E longitude.
 // Same as Lod
+// https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no
 
 function displayWeather () {
-    fetch("https://cors-anywhere.herokuapp.com/https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
+    fetch("https://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
         method: 'GET', // Use the appropriate HTTP method
         headers: {
           'Content-Type': 'application/json' // Optional: Only necessary if you're sending a request body
