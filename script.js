@@ -244,7 +244,7 @@ function autoScroll() {
 // https://api.weatherapi.com/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no
 
 function displayWeather () {
-    fetch("https://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
+    fetch("http://localhost:3000/api/v1/current.json?key=***REMOVED***&q=31.8686,34.9889&aqi=no" , {
         method: 'GET', // Use the appropriate HTTP method
         headers: {
           'Content-Type': 'application/json' // Optional: Only necessary if you're sending a request body
