@@ -40,7 +40,7 @@ body {
     color: #a52a2a;
 }
 
-.no-border .col {
+.no-border {
     border: none;
 }
 
@@ -49,7 +49,8 @@ body {
 }
 
 .card-body {
-    text-align: right;        
+    text-align: right;
+    border: none;        
 }
 
 .custom-container {    
