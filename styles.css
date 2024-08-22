@@ -87,19 +87,22 @@ body {
 .custom-card .card-header,
 .custom-card .card-body {
     margin-right: 50px;
-    padding-top: 60px;           
+    padding-top: 45px;           
 }
 
 .zmanim {
     padding-left: 100px;
+    color: blue;
 }
 
 .chol {
     padding-right: 150px;
+    color: blue;
 }
 
 .odahot {
     padding-right: 150px;
     padding-top: 150px;
+    color: blue;
 }
 
