@@ -6,22 +6,25 @@ body {
     line-height: 1.0;
     height: 100vh;
     font-size: 24px; 
-    color: white;    
+    color: white;
+    padding: 10px;
+    margin: 10px;
 }
 
 .container-fluid {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .box {
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+  
 }
 
 .row.no-gutters {
     margin-right: 0;
-    margin-left: 0;
+    margin-left: 0;    
 }
 
 .row.no-gutters > [class*='col-'] {
@@ -49,8 +52,7 @@ body {
 }
 
 .card-body {
-    text-align: right;
-    border: none;        
+    text-align: right; 
 }
 
 .custom-container {    
@@ -58,7 +60,7 @@ body {
     height: 100vh; 
     display: flex;
     justify-content: center;
-    align-items: center;     
+    align-items: center;    
 }
 
 .align-right {
@@ -84,6 +86,6 @@ body {
 
 .custom-card .card-header,
 .custom-card .card-body {
-    margin-right: 10px;         
+    margin-right: 10px;           
 }
 
