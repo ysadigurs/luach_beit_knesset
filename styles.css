@@ -32,23 +32,8 @@ body {
     padding-left: 0;
 }
 
-.thick-border {    
-    padding: 10px;
-    margin: 10px;
-}
-
-.luach-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #a52a2a;
-}
-
 .no-border {
     border: none;
-}
-
-.card-header {
-    text-align: center;     
 }
 
 .card-body {
@@ -56,7 +41,7 @@ body {
 }
 
 .custom-container {    
-    color: blue;
+    color: #395784;
     height: 100vh; 
     display: flex;
     justify-content: center;
@@ -67,42 +52,28 @@ body {
     justify-content: flex-end; /* Flexbox utility to align right */
 }
 
-.col-date {    
-    background-color: transparent !important;
-    color: blue;
-}
-
-.col-zmanim {
-    margin-top: 180px;     
-}
-
-.col-chol {    
-    margin-top: 180px;     
-}
-
 .custom-card{
     background-color: transparent !important;
 }
 
-.custom-card .card-header,
 .custom-card .card-body {
     margin-right: 50px;
-    padding-top: 45px;           
+    padding-top: 50px;           
 }
 
 .zmanim {
     padding-left: 100px;
-    color: blue;
+    color: #395784;
 }
 
 .chol {
     padding-right: 150px;
-    color: blue;
+    color: #395784;
 }
 
 .odahot {
     padding-right: 150px;
     padding-top: 150px;
-    color: blue;
+    color: #395784;
 }
 
