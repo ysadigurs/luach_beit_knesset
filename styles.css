@@ -86,6 +86,20 @@ body {
 
 .custom-card .card-header,
 .custom-card .card-body {
-    margin-right: 10px;           
+    margin-right: 50px;
+    padding-top: 45px;           
+}
+
+.zmanim {
+    padding-left: 100px;
+}
+
+.chol {
+    padding-right: 150px;
+}
+
+.odahot {
+    padding-right: 150px;
+    padding-top: 120px;
 }
 
