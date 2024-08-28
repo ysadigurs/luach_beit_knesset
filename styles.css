@@ -3,7 +3,7 @@ body {
     direction: rtl; 
     text-align: right;
     font-weight: bold;
-    line-height: 1.0;
+    line-height: 0.8;
     height: 100vh;
     font-size: 24px; 
     color: white;
@@ -15,12 +15,14 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
-
+/*
 .box {
     padding: 10px;
     margin-bottom: 10px;
   
 }
+*/
+
 
 .row.no-gutters {
     margin-right: 0;
@@ -31,6 +33,7 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
+
 
 .no-border {
     border: none;
@@ -57,13 +60,19 @@ body {
 }
 
 .custom-card .card-body {
-    margin-right: 50px;
+    margin-right: 10px;
     padding-top: 50px;           
 }
 
-.zmanim {
-    padding-left: 100px;
+.zmanim {    
+    margin-left: 200px;
     color: #395784;
+}
+
+.shabat {
+    margin-left: 10px;
+    padding-right: 10px;
+    color: white;
 }
 
 .chol {
@@ -73,7 +82,7 @@ body {
 
 .odahot {
     padding-right: 150px;
-    padding-top: 150px;
+    margin-top: 50px;
     color: #395784;
 }
 
