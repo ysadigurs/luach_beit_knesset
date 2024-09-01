@@ -216,7 +216,7 @@ function displayChagim() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('chagim_1').textContent = `${data.items.find( record => record.category === "mevarchim").hebrew}`;
+        document.getElementById('chagim_1').textContent = `${data.items.find( record => record.category === "roshchodesh").hebrew}`;
         /*document.getElementById('chagim_2').textContent = `${data.items.find( record => record.category === "mevarchim").memo}`;*/
         
     })
