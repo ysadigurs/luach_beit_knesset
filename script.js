@@ -260,20 +260,25 @@ function displayWeather () {
 }
 
 
-function initApp () {
-    // Reload the page every 60 seconds (60000 milliseconds)
-    setInterval(() => {location.reload();}, 5*60000);
-    setInterval(updateClock, 1000);
-    updateClock();
-    displayLeibovitzZmanim(); 
-    // displayZmanim();   - Replaced by Leibovitz
+function displayAll () {
+    displayLeibovitzZmanim();    
     displayShabbatStatic();
     displayConfig();
     displayChol();
-    displayChagim();
-    //displayWeather(); // - CORS issue
-    //setInterval(() => {autoScroll();}, 50);
+    displayChagim();  
+}
 
+function initApp () {
+    // Reload the page every 60 seconds (60000 milliseconds)
+    //setInterval(() => {location.reload();}, 5*60000);
+
+    setInterval(updateClock, 1000);
+    updateClock();
+    //displayWeather(); // - CORS issue
+  
+    // Reset the page data every few minutes
+    setInterval(displayAll, 5*60000);
+    displayAll();
 }
 
 initApp();
