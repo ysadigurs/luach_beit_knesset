@@ -35,33 +35,6 @@ function addMinutesToTime(timeStr, minutesToAdd) {
     let newMinutes = date.getMinutes().toString().padStart(2, '0');
     return `${newHours}:${newMinutes}`;
 }
-/* 
- * Replaced by Leibovitz times
- *
-function displayZmanim() {
-    fetch('https://www.hebcal.com/zmanim?cfg=json&geonameid=8199379')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('chatzotNight').textContent = `${data.times.chatzotNight.substr(11, 5)}`;
-        document.getElementById('alotHaShachar').textContent = `${data.times.alotHaShachar.substr(11, 5)}`;
-        document.getElementById('misheyakir').textContent = `${data.times.misheyakir.substr(11, 5)}`;
-        document.getElementById('sunrise').textContent = `${data.times.sunrise.substr(11, 5)}`;
-        document.getElementById('sofZmanShmaMGA').textContent = `${data.times.sofZmanShmaMGA.substr(11, 5)}`;
-        document.getElementById('sofZmanShma').textContent = `${data.times.sofZmanShma.substr(11, 5)}`;
-        document.getElementById('sofZmanTfilla').textContent = `${data.times.sofZmanTfilla.substr(11, 5)}`;
-        document.getElementById('chatzot').textContent = `${data.times.chatzot.substr(11, 5)}`;
-        document.getElementById('minchaGedola').textContent = `${data.times.minchaGedola.substr(11, 5)}`;
-        document.getElementById('minchaKetana').textContent = `${data.times.minchaKetana.substr(11, 5)}`;
-        document.getElementById('plagHaMincha').textContent = `${data.times.plagHaMincha.substr(11, 5)}`;
-        document.getElementById('sunset').textContent = `${data.times.sunset.substr(11, 5)}`;
-        document.getElementById('tzeit7083deg').textContent = `${data.times.tzeit7083deg.substr(11, 5)}`;
-        
-    })
-    .catch(error => {
-        console.error('Error fetching the Zmanim:', error);
-    });
-}
-*/
 
 function parseDateDDMMYYYY(dateStr) {
     const [day, month, year] = dateStr.split('-').map(Number);
@@ -83,6 +56,15 @@ function getCurrentDay() {
     const currentDayName = daysOfWeek[currentDayIndex];
     return currentDayName;
 }
+
+function getCurrentDayHebrew() {
+    const daysOfWeek = ["יום ראשון", "יום שני", "יום שלישי", "יום רביעי", "יום חמישי", "יום שישי", "שבת"];
+    const currentDate = new Date();
+    const currentDayIndex = currentDate.getDay();
+    const currentDayName = daysOfWeek[currentDayIndex];
+    return currentDayName;
+}
+
 
 function addDays(date, days) {
     const result = new Date(date);
@@ -151,18 +133,21 @@ function displayLeibovitzZmanim() {
         .catch(error => {
             console.error('Error fetching the leibovitz file', error);
         });
-
-        console.log('displayShabbatHours() ends');        
     })
     .catch(error => {
         console.error('Error fetching the Leiboviz hour:', error);
     });
+ 
+    console.log('displayLeibovitzZmanim() ends');        
+ 
 }
 
 function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
     document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
+
+    console.log('displayShabbatStatic() ends');   
 }
 
 function displayConfig() {
@@ -182,6 +167,8 @@ function displayConfig() {
     .catch(error => {
         console.error('Error fetching config.json', error);
     });   
+
+    console.log('displayConfig() ends'); 
     
 }
 
@@ -195,8 +182,12 @@ function getTodayDate() {
 }
 
 function displayChol() {
-    const today = getTodayDate();
-    fetch(`https://www.hebcal.com/converter?cfg=json&g2h=1&strict=1&date=${today}`)
+    const today = new Date();
+    document.getElementById('loazi').textContent = `${formatDateToDDMMYYYY(today)}`;
+    document.getElementById('weekday').textContent = `${getCurrentDayHebrew()}`;
+    
+    const todayStr = getTodayDate();
+    fetch(`https://www.hebcal.com/converter?cfg=json&g2h=1&strict=1&date=${todayStr}`)
     .then(response => response.json())
     .then(data => {
         document.getElementById('today').textContent = `${data.hebrew}`;
@@ -208,6 +199,8 @@ function displayChol() {
     document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
     document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;    
     document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;    
+
+    console.log('displayChol() ends'); 
      
 }
 
@@ -216,51 +209,33 @@ function displayChagim() {
     fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=32&c=on&M=on&lg=he&tgt=_top')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('chagim_1').textContent = `${data.items.find( record => record.category === "roshchodesh").hebrew}`;
-        /*document.getElementById('chagim_2').textContent = `${data.items.find( record => record.category === "mevarchim").memo}`;*/
+        const item_rosh = data.items.find( record => record.category === "roshchodesh");
+        if (item_rosh != undefined) {
+                const item_mervachim = data.items.find( record => record.category === "mevarchim");
+                if (item_mervachim != undefined) document.getElementById('chagim_1').textContent = `${item_mervachim.memo}`;
+        }
+        else {
+            const item_chagim = data.items.find( record => record.category === "holiday");
+            if (item_chagim != undefined) {
+                document.getElementById('chagim_1').textContent = `${item_chagim.hebrew}`;           
+            }
+        }
         
     })
     .catch(error => {
         console.error('Error fetching the chagim 1', error);
     });
-}
 
-
-const scrollableColumn = document.getElementById('scrollable-column');
-let scrollTop = 0;
-
-function autoScroll() {
-    const maxScrollTop = scrollableColumn.scrollHeight - scrollableColumn.clientHeight;
-
-    scrollTop += 1; // Scroll down by 1px per interval
-
-    if (scrollTop > maxScrollTop) {
-            scrollTop = 0; // Reset scroll position to top
-    }
-    scrollableColumn.scrollTo(0, scrollTop);
-
-}
-
-// Nof hayalon coordinates 31°52′07″N 34°59′20″E from Wikiepedia convert to approximately 31.8686°N latitude and 34.9889°E longitude.
-// Same as Lod
-// Attempts: 
-// After removing keys
-
-function displayWeather () {
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid={APPID}")
-    .then(response => {
-        const result = response.json();
-        document.getElementById('temperature').textContent = `${result.main.temp}` + " מעלות ";
-     
-        console.log('Request made with credentials: include');
-    })
-    .catch (error => {
-        console.error("temperature error:", error);
-    });
+    console.log('displayChagim() ends'); 
 }
 
 
 function displayAll () {
+    // Debug
+    let output = document.getElementById('output');
+    let currentTime = new Date().toLocaleTimeString();
+    console.log("Function called at: " + currentTime);
+
     displayLeibovitzZmanim();    
     displayShabbatStatic();
     displayConfig();
@@ -277,7 +252,7 @@ function initApp () {
     //displayWeather(); // - CORS issue
   
     // Reset the page data every few minutes
-    setInterval(displayAll, 5*60000);
+    setInterval(displayAll, 1000*60);   
     displayAll();
 }
 
