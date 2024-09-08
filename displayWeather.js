@@ -2,7 +2,7 @@
 // Same as Lod
 // Attempts: 
 // After removing keys
-
+/*
 <!-- Row with the date, clock, daf yomi -->
 <!-- <div class="row mt-4 gx-5"> -->
     <!-- date + temperature -->
@@ -30,7 +30,7 @@
         <!-- </div> -->
     <!-- </div> -->
 <!-- </div> -->
-
+*/
 
 function displayWeather () {
     fetch("https://api.openweathermap.org/data/2.5/weather?lat=31.8686&lon=34.9889&units=metric&appid={APPID}")
