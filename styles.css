@@ -68,23 +68,18 @@ body {
 .zmanim {    
     margin-left: 100px;
     /*padding-right: 10px;*/
-    color: #395784;
 }
 
-.shabat {
-   /* margin-left: 10px;
-    padding-right: 10px; */
-    color: white;
+.custom-margin {
+    margin-top: 100px; 
 }
 
 .chol {
     padding-right: 120px;
-    color: #395784;
 }
 
 .odahot {
     padding-right: 150px;
     margin-top: 50px;
-    color: #395784;
 }
 
