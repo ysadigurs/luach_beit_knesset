@@ -242,6 +242,21 @@ function displayChagim() {
     console.log('displayChagim() ends'); 
 }
 
+function checkInternetConnection() {
+    fetch('https://www.google.com', { method: 'HEAD' })
+        .then(function(response) {
+            if (response.ok) {
+                document.getElementById('connection-status').style.backgroundColor = 'green';
+            } else {
+                document.getElementById('connection-status').style.backgroundColor = 'red';
+            }
+        })
+        .catch(function() {
+            document.getElementById('connection-status').style.backgroundColor = 'red';
+        });
+    
+    console.log('checkInternetConnection() ends');
+}
 
 function displayAll () {
     // Debug
@@ -253,7 +268,8 @@ function displayAll () {
     displayShabbatStatic();
     displayConfig();
     displayChol();
-    displayChagim();  
+    displayChagim();
+    checkInternetConnection();  
 }
 
 function initApp () {
