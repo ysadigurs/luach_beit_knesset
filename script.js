@@ -154,6 +154,12 @@ function displayConfig() {
     fetch("https://ysadigurs.github.io/luach_beit_knesset/config.json")
     .then(response => response.json())
     .then(data => {
+
+        // Read fixed json data
+        document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
+        document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
+        document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;           
+  
         const currentDay = getCurrentDay();
         if (currentDay === "Friday" || currentDay === "Saturday") {
             // Read json data
@@ -162,9 +168,6 @@ function displayConfig() {
             document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
-            document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
-            document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
-            document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;           
         }
         else {
             // Set empty json data
