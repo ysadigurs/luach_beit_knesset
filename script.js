@@ -158,10 +158,16 @@ function displayConfig() {
         // Read fixed json data
         document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
-        document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;           
-  
+        document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;   
+        
         const currentDay = getCurrentDay();
-        if (currentDay === "Monday" || currentDay === "Friday" || currentDay === "Saturday") {
+        if (currentDay === "Sunday" || currentDay === "Tuesday") {
+            // Set empty json data
+            document.getElementById('dvar_tora').textContent = "";
+            document.getElementById('shiur_tfila').textContent = "";
+            document.getElementById('shiur_shabat').textContent = "";
+        }
+        else {
             // Read json data
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
             document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
@@ -169,12 +175,7 @@ function displayConfig() {
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
         }
-        else {
-            // Set empty json data
-            document.getElementById('dvar_tora').textContent = "";
-            document.getElementById('shiur_tfila').textContent = "";
-            document.getElementById('shiur_shabat').textContent = "";
-        }         
+                 
     })
     .catch(error => {
         console.error('Error fetching config.json', error);
