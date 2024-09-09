@@ -161,7 +161,7 @@ function displayConfig() {
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;           
   
         const currentDay = getCurrentDay();
-        if (currentDay === "Friday" || currentDay === "Saturday") {
+        if (currentDay === "Monday" || currentDay === "Friday" || currentDay === "Saturday") {
             // Read json data
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
             document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
