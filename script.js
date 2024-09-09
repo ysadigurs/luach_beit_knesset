@@ -257,15 +257,15 @@ function displayAll () {
 }
 
 function initApp () {
-    // Reload the page every 60 seconds (60000 milliseconds)
-    //setInterval(() => {location.reload();}, 5*60000);
+    // Reload the page every few seconds/minutes (milliseconds)
+    setInterval(() => {location.reload();}, 5*60000);
 
     setInterval(updateClock, 1000);
     updateClock();
     //displayWeather(); // - CORS issue
   
     // Reset the page data every few minutes
-    setInterval(displayAll, 1000*60);   
+    //setInterval(displayAll, 1000*60);   
     displayAll();
 }
 

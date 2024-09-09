@@ -1,20 +1,21 @@
 body {
-    font-family: 'Suez One', sans-serif;  /* previous: Alef, Assistant */
+    font-family: sans-serif, sans-serif;  /* previous: Alef, Assistant, Suez One */
     direction: rtl; 
     text-align: right;
     /*font-weight: bold;*/
-    line-height: 1.0;
+    line-height: 0.8;
     height: 100vh;
     font-size: 36px; 
     color: white;
-    padding: 10px;
-    margin: 10px;
+    /*padding: 10px;
+    margin: 10px;*/
 }
-
+/*
 .container-fluid {
     padding-left: 10px;
     padding-right: 10px;
 }
+*/
 /*
 .box {
     padding: 10px;
@@ -23,7 +24,7 @@ body {
 }
 */
 
-
+/*
 .row.no-gutters {
     margin-right: 0;
     margin-left: 0;    
@@ -33,7 +34,7 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
-
+*/
 
 .no-border {
     border: none;
@@ -58,26 +59,26 @@ body {
 .custom-card{
     background-color: transparent !important;
 }
-
+/*
 .custom-card .card-body {
     margin-right: 10px;
     padding-top: 50px;           
 }
-
+*/
 .zmanim {    
-    margin-left: 200px;
-    padding-right: 10px;
+    margin-left: 100px;
+    /*padding-right: 10px;*/
     color: #395784;
 }
 
 .shabat {
-    margin-left: 10px;
-    padding-right: 10px;
+   /* margin-left: 10px;
+    padding-right: 10px; */
     color: white;
 }
 
 .chol {
-    padding-right: 150px;
+    padding-right: 120px;
     color: #395784;
 }
 
