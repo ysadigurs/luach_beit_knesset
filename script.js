@@ -243,7 +243,7 @@ function displayChagim() {
 }
 
 function checkInternetConnection() {
-    fetch('https://www.google.com', { method: 'HEAD' })
+    fetch('https://ysadigurs.github.io/luach_beit_knesset/config.json')
         .then(function(response) {
             if (response.ok) {
                 document.getElementById('connection-status').style.backgroundColor = 'green';
