@@ -178,6 +178,7 @@ function displayConfig() {
         document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
         document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
         document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
+        document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
         document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
         
                  
