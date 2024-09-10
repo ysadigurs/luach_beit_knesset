@@ -72,6 +72,17 @@ function addDays(date, days) {
     return result;
 }
 
+function getNextSaturday() {
+    const today = new Date();
+    const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+    const daysUntilSaturday = (6 - dayOfWeek + 7) % 7; // Days until next Saturday
+    const nextSaturday = new Date(today);
+    nextSaturday.setDate(today.getDate() + daysUntilSaturday);
+
+    return nextSaturday;
+}
+
+console.log(getNextSaturday());
 let parasha_date = null;
 
 // Get Parasha date from Hebcal
@@ -81,10 +92,12 @@ function displayLeibovitzZmanim() {
     .then(response => response.json())
     .then(data => {
         // Hebcal parasha loazi date and daily daf yomi       
-        parasha_date = formatDateToDDMMYYYY(new Date(data.items.find( record => record.category === "parashat").date));
+        //parasha_date = formatDateToDDMMYYYY(new Date(data.items.find( record => record.category === "parashat").date));
+        parasha_date = formatDateToDDMMYYYY(getNextSaturday());
+
         const today = getTodayDate();
         document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
-  
+          
         // weekly leibovitz times
         fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
         .then(response => response.json())
@@ -160,21 +173,13 @@ function displayConfig() {
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;   
         
-        const currentDay = getCurrentDay();
-        if (currentDay === "Sunday" || currentDay === "Tuesday") {
-            // Set empty json data
-            document.getElementById('dvar_tora').textContent = "";
-            document.getElementById('shiur_tfila').textContent = "";
-            document.getElementById('shiur_shabat').textContent = "";
-        }
-        else {
-            // Read json data
-            document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
-            document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-            document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
-            document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
-            document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
-        }
+        // Read json data
+        document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
+        document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
+        document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
+        document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
+        document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
+        
                  
     })
     .catch(error => {
