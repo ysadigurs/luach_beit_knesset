@@ -65,9 +65,19 @@ function getCurrentDayHebrew() {
     return currentDayName;
 }
 
+function convertDateFormat(dateStr) {
+    // Split the date string by "-"
+    const [day, month, year] = dateStr.split('-');
+    
+    // Rearrange to YYYY-MM-DD format
+    const formattedDate = `${year}-${month}-${day}`;
+    
+    return formattedDate;
+  }
+  
 
 function addDays(date, days) {
-    const result = new Date(date);
+    const result = new Date(convertDateFormat(date));
     result.setDate(result.getDate() + days);
     return result;
 }
@@ -164,8 +174,8 @@ function displayLeibovitzZmanim() {
             // Change to next week on Fridays.
             const currentDay = getCurrentDay();
             if (currentDay === "Friday" || currentDay === "Saturday") {
-
-                const nextItem =  data.find( record => (record["date"] === addDays(parasha_date, 7).toLocaleDateString()));
+                const nextShabat = formatDateToDDMMYYYY(addDays(parasha_date, 7));
+                const nextItem =  data.find( record => (record["date"] === nextShabat));
                 document.getElementById('mincha_ktana_chol').textContent = `${nextItem["minchahol"].substr(0, 5)}`; 
                 document.getElementById('arvit_chol').textContent = `${nextItem["arvithol"].substr(0, 5)}`; 
 
