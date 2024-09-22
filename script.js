@@ -88,7 +88,7 @@ function getNextSaturday() {
     const daysUntilSaturday = (6 - dayOfWeek + 7) % 7; // Days until next Saturday
     const nextSaturday = new Date(today);
     nextSaturday.setDate(today.getDate() + daysUntilSaturday);
-
+ 
     return nextSaturday;
 }
 
