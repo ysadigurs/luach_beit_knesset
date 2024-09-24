@@ -195,100 +195,6 @@ function displayLeibovitzZmanim() {
  
 }
 
-function displayDafYomi(){
-
-    fetch('https://www.hebcal.com/shabbat?cfg=json&i=on&geonameid=8199379&ue=off&b=28&c=on&M=on&F=on&lg=he&tgt=_top')
-    .then(response => response.json())
-    .then(data => {
-        const today = getTodayDate();
-        document.getElementById('daf_yomi').textContent = `${data.items.find( record => (record.category === "dafyomi" && record.date === today)).hebrew}`;
-
-   })
-    .catch(error => {
-        console.error('Error fetching the daf yomi:', error);
-    });
- 
-    console.log('displayDafYomi() ends');        
- 
-
-}
-
-//let parasha_date = null;
-
-// Get Parasha date from Hebcal
-// Retrieve Parasha record from Leibovitz
-function displayLeibovitzZmanimWithChagim() { 
-
-    // weekly leibovitz times
-    fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
-    .then(response => response.json())
-    .then(data => {
-        // Get next record in Leibovitz sheet (shabat or chag)
-        // Unit tests:
-        // Today: getTodayDate() 2024/09/23
-        // Saturday: 2024/09/28 
-        // Sunday before RH: 2024/09/29
-        // Rosh Hashana erev: 2024/10/02
-        // Rosh Hashana day-1: 2024/10/03
-        // Shabat Tshuva: 2024/10/05
-        // Yom Kipur week: 2024/10/06
-        // Yom Kipur: 2024/10/12
-        // Sucot week: 2024/10/13
-        // Sucot: 2024/10/16
-        // Shabat cholamoed: 2024/10/17
-        // Simcha tora: 2024/10/20
-        // Bereshit: 2024/10/25
-        // Bereshit: 2024/10/26
-        // Noah: 2024/10/27
-
-        const today = new Date(getTodayDate());            
-        let item = null;
-        //const item =  data.find( record => (today <= Date(convertDateFormat(record["date"]))));
-
-        for (let i = 0; i < data.length; i++) {    
-            const recordDate = new Date(convertDateFormat(data[i].date));
-            if (recordDate >= today) {
-                item = data[i];
-                console.log(`${recordDate} is equal to or greater than the input ${today}.`);
-                break;
-            }
-        }
-
-            
-        // Shabat times
-        document.getElementById('parasha').textContent = `${item["parasha"]}`;            
-        document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
-        // mincha erev shabat is 13 minutes after adlaka
-        document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
-        document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
-        document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
-        document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
-            
-        // Tfila Hol
-        // Change to next week on Fridays.
-        const currentDay = getCurrentDay();
-        if (currentDay === "Friday" || currentDay === "Saturday") {
-            const nextShabat = formatDateToDDMMYYYY(addDays(parasha_date, 7));
-            const nextItem =  data.find( record => (record["date"] === nextShabat));
-            document.getElementById('mincha_ktana_chol').textContent = `${nextItem["minchahol"].substr(0, 5)}`; 
-            document.getElementById('arvit_chol').textContent = `${nextItem["arvithol"].substr(0, 5)}`; 
-
-        }
-        else {
-            document.getElementById('mincha_ktana_chol').textContent = `${item["minchahol"].substr(0, 5)}`; 
-            document.getElementById('arvit_chol').textContent = `${item["arvithol"].substr(0, 5)}`; 
-        }
-
-    })    
-    .catch(error => {
-        console.error('Error fetching the Leiboviz with Chagim hours:', error);
-    });
- 
-    console.log('displayLeibovitzZmanimWithChagim() ends');        
- 
-}
-
-
 function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
@@ -419,8 +325,7 @@ function displayAll () {
     let currentTime = new Date().toLocaleTimeString();
     console.log("Function called at: " + currentTime);
 
-    displayDafYomi();
-    displayLeibovitzZmanimWithChagim();    
+    displayLeibovitzZmanim();    
     displayZmanim();    
     displayShabbatStatic();
     displayConfig();
@@ -430,8 +335,8 @@ function displayAll () {
 }
 
 function initApp () {
-    // Reload the page every few seconds/minutes (in milliseconds)
-    setInterval(() => {location.reload();}, 5*60*1000);
+    // Reload the page every few seconds/minutes (milliseconds)
+    // setInterval(() => {location.reload();}, 5*60000);
 
     setInterval(updateClock, 1000);
     updateClock();
