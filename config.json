@@ -1,12 +1,12 @@
 {
-    "dvarTora": "",
+    "dvarTora": "הרב צבי לוסטיג",
     "dafYomiTime": "07:15",
     "shiurDafYomiTime": "07:15",
     "shiurAfterTfilaTime": "",
     "shiurAfterTfila": "לא יתקיים השבת",
-    "shiurShabatTime": "",
-    "shiurShabatName": "",
-    "shiurShabatTitle": "",
-    "odaha1": "שבוע טוב",
+    "shiurShabatTime": "16:30",
+    "shiurShabatName": "אבי אודס",
+    "shiurShabatTitle": "על סבאות בהלכה ובמשפט",
+    "odaha1": "",
     "odaha2": ""
 }
