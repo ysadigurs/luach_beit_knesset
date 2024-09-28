@@ -248,8 +248,7 @@ function displayLeibovitzZmanimWithChagim() {
         for (let i = 0; i < data.length; i++) {    
             const recordDate = new Date(convertDateFormat(data[i].date));
             if (recordDate >= today) {
-                item = data[i];
-                parasha_date = recordDate;
+                item = data[i];                
                 console.log(`${recordDate} is equal to or greater than the input ${today}.`);
                 break;
             }
