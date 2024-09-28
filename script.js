@@ -213,11 +213,11 @@ function displayDafYomi(){
 
 }
 
-//let parasha_date = null;
-
-// Get Parasha date from Hebcal
+// Get Parasha date from today including Chagim
 // Retrieve Parasha record from Leibovitz
 function displayLeibovitzZmanimWithChagim() { 
+
+    parasha_date = formatDateToDDMMYYYY(getNextSaturday()); // date of next Shabat
 
     // weekly leibovitz times
     fetch("https://ysadigurs.github.io/luach_beit_knesset/weekly.json")
@@ -249,6 +249,7 @@ function displayLeibovitzZmanimWithChagim() {
             const recordDate = new Date(convertDateFormat(data[i].date));
             if (recordDate >= today) {
                 item = data[i];
+                parasha_date = recordDate;
                 console.log(`${recordDate} is equal to or greater than the input ${today}.`);
                 break;
             }
