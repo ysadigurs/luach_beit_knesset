@@ -1,5 +1,5 @@
 const config = {
-    "shacharit_shabat_1": "05:55",
+    "shacharit_shabat_1": "06:25",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
     "shacharit_chol_1":"05:40",
