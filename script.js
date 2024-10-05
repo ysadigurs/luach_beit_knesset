@@ -425,7 +425,7 @@ function displayAll () {
     displayShabbatStatic();
     displayConfig();
     displayChol();
-    //displayChagim();
+    // displayChagim();
     checkInternetConnection();  
 }
 
