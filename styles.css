@@ -3,7 +3,7 @@ body {
     direction: rtl; 
     text-align: right;
     /*font-weight: bold;*/
-    line-height: 1.0;
+    line-height: 0.8;
     height: 100vh;
     font-size: 18px; 
     color: white;
