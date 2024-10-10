@@ -292,7 +292,7 @@ function displayLeibovitzZmanimWithChagim() {
 function displayShabbatStatic() {
     document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
     document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
-    document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
+    // yom-kipur document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
 
     console.log('displayShabbatStatic() ends');   
 }
