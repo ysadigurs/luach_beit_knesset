@@ -149,7 +149,7 @@ function displayLeibovitzZmanim() {
             document.getElementById('parasha').textContent = `${item["parasha"]}`;            
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
             // mincha erev shabat is 13 minutes after adlaka
-            // yom-kipur document.getElementById('mincha_erev').textContent = "17:52"; //yom-kipur addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
+            // yom-kipur document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
             // yom-kipur document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
             // yom-kipur document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
