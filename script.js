@@ -149,8 +149,8 @@ function displayLeibovitzZmanim() {
             document.getElementById('parasha').textContent = `${item["parasha"]}`;            
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
             // mincha erev shabat is 13 minutes after adlaka
-            document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
-            document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
+            document.getElementById('mincha_erev').textContent = "17:52"; //yom-kipur addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
+            // yom-kipur document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
             document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
             // Zmanim (weekly)
@@ -304,7 +304,7 @@ function displayConfig() {
     .then(data => {
 
         // Read fixed json data
-        document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
+        // yom-kipur document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;   
 
@@ -312,12 +312,14 @@ function displayConfig() {
         if (currentDay === "Wednesday" || currentDay === "Thursday" || currentDay === "Friday" || currentDay === "Saturday" ) {
         
             // Read config json data
+            /* yom-kipur
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
             document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
             document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
             document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
+            */
 
         }
         else {
