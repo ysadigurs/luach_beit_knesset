@@ -1,7 +1,7 @@
 const config = {
-    "shacharit_shabat_1": "06:25",
-    "shacharit_shabat":"08:00",
-    "mincha_gdola_shabat": "13:30",
+    "shacharit_shabat_1": "05:55",
+    "shacharit_shabat":"07:30",
+    "mincha_gdola_shabat": "",
     "shacharit_chol_1":"05:40",
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
