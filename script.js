@@ -124,7 +124,7 @@ function displayZmanim() {
 }
 
 let parasha_date = null;
-
+/* Deprecated
 // Get Parasha date from Hebcal
 // Retrieve Parasha record from Leibovitz
 function displayLeibovitzZmanim() { 
@@ -149,9 +149,9 @@ function displayLeibovitzZmanim() {
             document.getElementById('parasha').textContent = `${item["parasha"]}`;            
             document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
             // mincha erev shabat is 13 minutes after adlaka
-            // yom-kipur document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
-            // yom-kipur document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
-            // yom-kipur document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
+            document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
+            document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
+            document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;
             
             // Zmanim (weekly)
             //document.getElementById('chatzotNight').textContent = `${item["hazot"].substr(0, 5)}`;  
@@ -194,6 +194,7 @@ function displayLeibovitzZmanim() {
     console.log('displayLeibovitzZmanim() ends');        
  
 }
+*/
 
 function displayDafYomi(){
 
@@ -259,9 +260,9 @@ function displayLeibovitzZmanimWithChagim() {
         document.getElementById('parasha').textContent = `${item["parasha"]}`;            
         document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
         // mincha erev shabat is 13 minutes after adlaka
-        document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
-        document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
-        document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
+        // yom-kipur document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
+        // yom-kipur document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
+        // yom-kipur document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
         document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
         // Tfila Hol
