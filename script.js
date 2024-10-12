@@ -413,7 +413,6 @@ function displayAll () {
     displayLeibovitzZmanimWithChagim();    
     displayZmanim();    
     displayShabbatStatic();
-    displayConfig();
     displayChol();
     // displayChagim();
     checkInternetConnection();  
