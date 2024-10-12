@@ -279,11 +279,6 @@ function displayLeibovitzZmanimWithChagim() {
 }
 
 
-function displayShabbatStatic() {
- 
-    console.log('displayShabbatStatic() ends');   
-}
-
 function displayConfig() {
   
     fetch("https://ysadigurs.github.io/luach_beit_knesset/config.json")
@@ -411,8 +406,8 @@ function displayAll () {
 
     displayDafYomi();
     displayLeibovitzZmanimWithChagim();    
-    displayZmanim();    
-    displayShabbatStatic();
+    displayZmanim();
+    displayConfig();
     displayChol();
     // displayChagim();
     checkInternetConnection();  
