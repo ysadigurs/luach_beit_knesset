@@ -289,13 +289,13 @@ function displayConfig() {
         document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;   
-        document.getElementById('shacharit_shabat_1').textContent = `${data[shacharit_shabat_1]}`;
-        document.getElementById('shacharit_shabat').textContent = `${data[shacharit_shabat]}`;
-        document.getElementById('mincha_gdola_shabat').textContent = `${data[mincha_gdola_shabat]}`;
-        document.getElementById('shacharit_chol_1').textContent = `${data[shacharit_chol_1]}`;
-        document.getElementById('shacharit_chol_2').textContent = `${data[shacharit_chol_2]}`;
-        document.getElementById('shacharit_chol_3').textContent = `${data[shacharit_chol_3]}`;    
-        document.getElementById('mincha_gdola_chol').textContent = `${data[mincha_gdola_chol]}`;   
+        document.getElementById('shacharit_shabat_1').textContent = `${data["shacharit_shabat_1"]}`;
+        document.getElementById('shacharit_shabat').textContent = `${data["shacharit_shabat"]}`;
+        document.getElementById('mincha_gdola_shabat').textContent = `${data["mincha_gdola_shabat"]}`;
+        document.getElementById('shacharit_chol_1').textContent = `${data["shacharit_chol_1"]}`;
+        document.getElementById('shacharit_chol_2').textContent = `${data["shacharit_chol_2"]}`;
+        document.getElementById('shacharit_chol_3').textContent = `${data["shacharit_chol_3"]}`;    
+        document.getElementById('mincha_gdola_chol').textContent = `${data["mincha_gdola_chol"]}`;   
     
         const currentDay = getCurrentDay();
         if (currentDay === "Wednesday" || currentDay === "Thursday" || currentDay === "Friday" || currentDay === "Saturday" ) {
