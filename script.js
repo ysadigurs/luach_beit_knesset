@@ -1,13 +1,3 @@
-const config = {
-    "shacharit_shabat_1": "05:55",
-    "shacharit_shabat":"07:30",
-    "mincha_gdola_shabat": "",
-    "shacharit_chol_1":"05:40",
-    "shacharit_chol_2":"06:20",
-    "shacharit_chol_3":"07:30", 
-    "mincha_gdola_chol": "13:30"   
-};
-
 function updateClock() {
     const clockElement = document.getElementById('digital-clock');
     const now = new Date();
@@ -259,10 +249,9 @@ function displayLeibovitzZmanimWithChagim() {
         // Shabat times
         document.getElementById('parasha').textContent = `${item["parasha"]}`;            
         document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
-        // mincha erev shabat is 13 minutes after adlaka
-        // yom-kipur document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
-        // yom-kipur document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
-        // yom-kipur document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
+        document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
+        document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
+        document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
         document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
         // Tfila Hol
@@ -291,10 +280,7 @@ function displayLeibovitzZmanimWithChagim() {
 
 
 function displayShabbatStatic() {
-    document.getElementById('shacharit_shabat_1').textContent = `${config.shacharit_shabat_1}`;
-    document.getElementById('shacharit_shabat').textContent = `${config.shacharit_shabat}`;
-    // yom-kipur document.getElementById('mincha_gdola_shabat').textContent = `${config.mincha_gdola_shabat}`;
-
+ 
     console.log('displayShabbatStatic() ends');   
 }
 
@@ -305,22 +291,27 @@ function displayConfig() {
     .then(data => {
 
         // Read fixed json data
-        // yom-kipur document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
+        document.getElementById('shiur_daf_yomi').textContent = `${data["shiurDafYomiTime"]}`;
         document.getElementById('odaha_1').textContent = `${data["odaha1"]}`;
         document.getElementById('odaha_2').textContent = `${data["odaha2"]}`;   
-
+        document.getElementById('shacharit_shabat_1').textContent = `${data[shacharit_shabat_1]}`;
+        document.getElementById('shacharit_shabat').textContent = `${data[shacharit_shabat]}`;
+        document.getElementById('mincha_gdola_shabat').textContent = `${data[mincha_gdola_shabat]}`;
+        document.getElementById('shacharit_chol_1').textContent = `${data[shacharit_chol_1]}`;
+        document.getElementById('shacharit_chol_2').textContent = `${data[shacharit_chol_2]}`;
+        document.getElementById('shacharit_chol_3').textContent = `${data[shacharit_chol_3]}`;    
+        document.getElementById('mincha_gdola_chol').textContent = `${data[mincha_gdola_chol]}`;   
+    
         const currentDay = getCurrentDay();
         if (currentDay === "Wednesday" || currentDay === "Thursday" || currentDay === "Friday" || currentDay === "Saturday" ) {
         
-            // Read config json data
-            /* yom-kipur
+            // Read config json data            
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
             document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
             document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
-            document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;
-            */
+            document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;            
 
         }
         else {
@@ -366,10 +357,6 @@ function displayChol() {
     .catch(error => {
         console.error('Error fetching today:', error);
     });
-    document.getElementById('shacharit_chol_1').textContent = `${config.shacharit_chol_1}`;
-    document.getElementById('shacharit_chol_2').textContent = `${config.shacharit_chol_2}`;
-    document.getElementById('shacharit_chol_3').textContent = `${config.shacharit_chol_3}`;    
-    document.getElementById('mincha_gdola_chol').textContent = `${config.mincha_gdola_chol}`;    
 
     console.log('displayChol() ends'); 
      
