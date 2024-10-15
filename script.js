@@ -251,7 +251,7 @@ function displayLeibovitzZmanimWithChagim() {
         document.getElementById('shabbat-hour').textContent = `${item["adlaka"].substr(0, 5)}`;
         document.getElementById('mincha_erev').textContent = addMinutesToTime(`${item["adlaka"].substr(0, 5)}`, 13);
         // succot document.getElementById('mincha_ktana_shabat').textContent = `${item["minchashabat"].substr(0, 5)}`; 
-        document.getElementById('mincha_ktana_shabat').textContent = `17:45`; 
+        document.getElementById('mincha_ktana_shabat').textContent = "17:45"; 
         document.getElementById('motzash').textContent = `${item["motzash"].substr(0, 5)}`;    
         document.getElementById('tzeit').textContent = `${item["tzeet"].substr(0, 5)}`;
             
