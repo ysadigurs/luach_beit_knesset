@@ -301,12 +301,12 @@ function displayConfig() {
         if (currentDay === "Wednesday" || currentDay === "Thursday" || currentDay === "Friday" || currentDay === "Saturday" ) {
         
             // Read config json data            
-            document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
-            document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-            document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
+            // succot document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
+            // succot document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
+            // succot document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
-            document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;            
+            // succot document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;            
 
         }
         else {
