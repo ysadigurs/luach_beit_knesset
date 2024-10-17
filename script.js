@@ -102,7 +102,8 @@ function displayZmanim() {
         document.getElementById('minchaGedola').textContent = `${data.times.minchaGedola.substr(11, 5)}`;
         //document.getElementById('minchaKetana').textContent = `${data.times.minchaKetana.substr(11, 5)}`;
         //document.getElementById('plagHaMincha').textContent = `${data.times.plagHaMincha.substr(11, 5)}`;
-        document.getElementById('sunset').textContent = `${data.times.sunset.substr(11, 5)}`;        
+        document.getElementById('sunset').textContent = `${data.times.sunset.substr(11, 5)}`;
+        document.getElementById('sunset2').textContent = `${data.times.sunset.substr(11, 5)}`;        
                 
     })
     .catch(error => {
