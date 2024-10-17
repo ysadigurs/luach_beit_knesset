@@ -319,7 +319,7 @@ function displayConfig() {
             // succot document.getElementById('shiur_tfila').textContent = "";
             document.getElementById('shiur_shabat_time').textContent = "";
             document.getElementById('shiur_shabat_name').textContent = "";
-            // succot document.getElementById('shiur_shabat').textContent = "";
+            document.getElementById('shiur_shabat').textContent = "";
         } 
                  
     })
