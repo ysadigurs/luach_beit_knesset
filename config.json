@@ -2,9 +2,9 @@
     "shacharit_shabat_1": "06:25",
     "shacharit_shabat":"08:00",
     "mincha_gdola_shabat": "13:30",
-    "shacharit_chol_1":"05:45",
-    "shacharit_chol_2":"06:25",
-    "shacharit_chol_3":"07:30", 
+    "shacharit_chol_1":"06:00א",
+    "shacharit_chol_2":"06:30מ",
+    "shacharit_chol_3":"מ07:40", 
     "mincha_gdola_chol": "13:30",    
     "dvarTora": "",
     "shiurDafYomiTime": "07:15",
@@ -14,5 +14,5 @@
     "shiurShabatName": "הרב אליהו רייך",
     "shiurShabatTitle": "שמחת תורה בארץ ישראל",
     "odaha1": "שבת שלום",
-    "odaha2": ""    
+    "odaha2": "מנינים בחה״מ: א7:00, א8:20, א9:00"    
 }
