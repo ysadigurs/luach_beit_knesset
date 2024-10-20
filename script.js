@@ -319,7 +319,10 @@ function displayConfig() {
             document.getElementById('shiur_shabat_time').textContent = "";
             document.getElementById('shiur_shabat_name').textContent = "";
             document.getElementById('shiur_shabat').textContent = "";
-        } 
+        }
+        if (document.getElementById('shiur_shabat_time').textContent === ""){
+            document.getElementById("shiurContainer").style.display = "none";
+        }  
                  
     })
     .catch(error => {
