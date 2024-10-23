@@ -1,18 +1,18 @@
 {
-    "shacharit_shabat_1": "06:25",
+    "shacharit_shabat_1": "06:50",
     "shacharit_shabat":"08:00",
-    "mincha_gdola_shabat": "13:30",
-    "shacharit_chol_1":"06:00א",
-    "shacharit_chol_2":"06:30מ",
-    "shacharit_chol_3":"07:00א", 
+    "mincha_gdola_shabat": "13:00",
+    "shacharit_chol_1":"06:00",
+    "shacharit_chol_2":"06:30",
+    "shacharit_chol_3":"07:00", 
     "mincha_gdola_chol": "13:00",    
     "dvarTora": "",
-    "shiurDafYomiTime": "07:15",
+    "shiurDafYomiTime": "",
     "shiurAfterTfilaTime": "",
     "shiurAfterTfila": "",
     "shiurShabatTime": "",
     "shiurShabatName": "",
     "shiurShabatTitle": "",
     "odaha1": "חג שמח",
-    "odaha2": "מניינים נוספים חוה״מ: מ07:40, א08:20, מ09:00"    
+    "odaha2": "יזכור 12:10"    
 }
