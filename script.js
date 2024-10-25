@@ -303,9 +303,9 @@ function displayConfig() {
         if (currentDay === "Tuesday" || currentDay === "Wednesday" || currentDay === "Thursday" || currentDay === "Friday" || currentDay === "Saturday" ) {
         
             // Read config json data            
-            // succot document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
-            // succot document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-            // succot document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
+            document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
+            document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
+            document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
             document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;            
@@ -314,16 +314,20 @@ function displayConfig() {
         else {
 
             // Clear config data in the begining of the week
-            // succot document.getElementById('dvar_tora').textContent = "";
-            // succot document.getElementById('shiur_tfila_time').textContent = "";
-            // succot document.getElementById('shiur_tfila').textContent = "";
+            document.getElementById('dvar_tora').textContent = "";
+            document.getElementById('shiur_tfila_time').textContent = "";
+            document.getElementById('shiur_tfila').textContent = "";
             document.getElementById('shiur_shabat_time').textContent = "";
             document.getElementById('shiur_shabat_name').textContent = "";
             document.getElementById('shiur_shabat').textContent = "";
         }
         if (document.getElementById('shiur_shabat_time').textContent === ""){
             document.getElementById("shiurContainer").style.display = "none";
-        }  
+        }
+        if (document.getElementById('shiur_tfila_time').textContent === ""){
+            document.getElementById("shiurTfilaContainer").style.display = "none";
+        }    
+               
                  
     })
     .catch(error => {
