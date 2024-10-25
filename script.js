@@ -293,7 +293,7 @@ function displayConfig() {
         document.getElementById('odaha_3').textContent = `${data["odaha3"]}`;   
         document.getElementById('shacharit_shabat_1').textContent = `${data["shacharit_shabat_1"]}`;
         document.getElementById('shacharit_shabat').textContent = `${data["shacharit_shabat"]}`;
-        // succot document.getElementById('mincha_gdola_shabat').textContent = `${data["mincha_gdola_shabat"]}`;
+        document.getElementById('mincha_gdola_shabat').textContent = `${data["mincha_gdola_shabat"]}`;
         document.getElementById('shacharit_chol_1').textContent = `${data["shacharit_chol_1"]}`;
         document.getElementById('shacharit_chol_2').textContent = `${data["shacharit_chol_2"]}`;
         document.getElementById('shacharit_chol_3').textContent = `${data["shacharit_chol_3"]}`;    
