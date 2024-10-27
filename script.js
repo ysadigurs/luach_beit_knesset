@@ -304,8 +304,8 @@ function displayConfig() {
         
             // Read config json data            
             document.getElementById('dvar_tora').textContent = `${data["dvarTora"]}`;
-            document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
-            document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
+            //document.getElementById('shiur_tfila_time').textContent = `${data["shiurAfterTfilaTime"]}`;
+            //document.getElementById('shiur_tfila').textContent = `${data["shiurAfterTfila"]}`;        
             document.getElementById('shiur_shabat_time').textContent = `${data["shiurShabatTime"]}`;
             document.getElementById('shiur_shabat_name').textContent = `${data["shiurShabatName"]}`;
             document.getElementById('shiur_shabat').textContent = `${data["shiurShabatTitle"]}`;            
@@ -321,12 +321,10 @@ function displayConfig() {
             document.getElementById('shiur_shabat_name').textContent = "";
             document.getElementById('shiur_shabat').textContent = "";
         }
-        if (document.getElementById('shiur_shabat_time').textContent === ""){
-            document.getElementById("shiurContainer").style.display = "none";
-        }
-        if (document.getElementById('shiur_tfila_time').textContent === ""){
-            document.getElementById("shiurTfilaContainer").style.display = "none";
-        }    
+        
+        
+
+       
                
                  
     })
