@@ -6,7 +6,7 @@
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:00",    
-    "dvarTora": "הרב משה מן",
+    "dvarTora": "",
     "shiurDafYomiTime": "07:15",
     "shiurAfterTfilaTime": "10:15",
     "shiurAfterTfila": "שיעור: הרב ישי בוכריס",
@@ -15,5 +15,5 @@
     "odaha1": "מנין נוסף 20 דקות אחרי מוצ״ש",
     "odaha2": "",
     "odaha3": "",
-    "configDate": "2025-01-08"         
+    "configDate": "2025-01-12"         
 }
