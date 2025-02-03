@@ -6,15 +6,15 @@
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:00",    
-    "dvarTora": "דבר תורה: מוה״ר גדעון בנימין",
+    "dvarTora": "",
     "shiurDafYomiTime": "07:15",
     "shiurAfterTfilaTime": "10:15",
-    "shiurAfterTfila": "שיעור: הרב ישי בוכריס",
+    "shiurAfterTfila": "הרב ישי בוכריס",
     "shiurShabatTime": "15:30",
-    "shiurShabatName": "שיעור: יהודה שניוייס",
-    "shiurShabatSubject": "פרשת השבוע",
+    "shiurShabatName": "",
+    "shiurShabatSubject": "",
     "odaha1": "מנין נוסף 20 דקות אחרי מוצ״ש",
     "odaha2": "",
     "odaha3": "",
-    "configDate": "2025-01-30"         
+    "configDate": "2025-02-03"         
 }
