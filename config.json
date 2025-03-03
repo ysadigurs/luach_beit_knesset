@@ -6,15 +6,15 @@
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:00",    
-    "dvarTora": "איתמר גולן",
+    "dvarTora": "",
     "shiurDafYomiTime": "07:15",
     "shiurAfterTfilaTime": "10:20",
-    "shiurAfterTfila": "הרב אריאל וידר",
+    "shiurAfterTfila": "",
     "shiurShabatTime": "16:00",
-    "shiurShabatName": "הרב אריאל וידר - בשלב ב׳",
+    "shiurShabatName": "",
     "shiurShabatSubject": "",
     "odaha1": "מנין נוסף 20 דקות אחרי מוצ״ש",
-    "odaha2": "*** שבת שקלים ***",
+    "odaha2": "*** שבת זכור ***",
     "odaha3": "",
-    "configDate": "2025-02-24"         
+    "configDate": "2025-03-03"         
 }
