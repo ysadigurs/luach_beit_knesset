@@ -6,15 +6,15 @@
     "shacharit_chol_2":"06:20",
     "shacharit_chol_3":"07:30", 
     "mincha_gdola_chol": "13:00",    
-    "dvarTora": "",
+    "dvarTora": "חיים לוי",
     "shiurDafYomiTime": "07:15",
     "shiurAfterTfilaTime": "10:20",
-    "shiurAfterTfila": "",
-    "shiurShabatTime": "16:00",
-    "shiurShabatName": "",
+    "shiurAfterTfila": "לא יתקיים",
+    "shiurShabatTime": "15:55",
+    "shiurShabatName": "אביגדור שלומוביץ - צער ב״ח",
     "shiurShabatSubject": "",
     "odaha1": "מנין נוסף 20 דקות אחרי מוצ״ש",
     "odaha2": "*** שבת זכור ***",
     "odaha3": "",
-    "configDate": "2025-03-03"         
+    "configDate": "2025-03-04"         
 }
