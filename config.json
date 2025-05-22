@@ -9,12 +9,12 @@
     "dvarToraNight": "",
     "dvarToraNightName": "",
     "dvarToraDay": "דבר תורה",
-    "dvarToraDayName": "עופר שוייצר",
+    "dvarToraDayName": "הרב משה נוימן",
     "shiurDafYomiTime": "07:15",
-    "shiurAfterTfilaTime": "",
-    "shiurAfterTfila": "",
+    "shiurAfterTfilaTime": "10:15",
+    "shiurAfterTfila": "הרב ישי בוכריס",
     "shiurShabatTime": "17:45",
-    "shiurShabatName": "הרב ד״ר חנן יצחקי, ואהבת לרעך כמוך",
+    "shiurShabatName": "הרב אלעד הלחמי, לא לשכח מול זכרון",
     "shiurShabatSubject": "",
     "odaha1": "",
     "chagim1": "",
@@ -27,5 +27,5 @@
     "odaha3": "",
     "odaha3Name": "",
     "odaha3Time": "",
-    "configDate": "2025-05-07"
+    "configDate": "2025-05-22"
 }
