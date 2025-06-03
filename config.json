@@ -1,13 +1,13 @@
 {
-    "shacharit_shabat_1": "06:45",
-    "shacharit_shabat": "08:30",
+    "shacharit_shabat_1": "06:25",
+    "shacharit_shabat": "08:00",
     "mincha_gdola_shabat": "13:30",
     "shacharit_chol_1": "05:40",
     "shacharit_chol_2": "06:20",
     "shacharit_chol_3": "07:30",
     "mincha_gdola_chol": "13:30",
-    "dvarToraNight": "דבר תורה",
-    "dvarToraNightName": "יוסי שינברג",
+    "dvarToraNight": "",
+    "dvarToraNightName": "",
     "dvarToraDay": "",
     "dvarToraDayName": "",
     "shiurDafYomiTime": "",
@@ -27,5 +27,5 @@
     "odaha3": "",
     "odaha3Name": "",
     "odaha3Time": "",
-    "configDate": "2025-05-29"
+    "configDate": "2025-06-01"
 }
