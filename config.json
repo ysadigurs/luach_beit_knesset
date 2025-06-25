@@ -8,13 +8,13 @@
     "mincha_gdola_chol": "13:30",
     "dvarToraNight": "",
     "dvarToraNightName": "",
-    "dvarToraDay": "",
-    "dvarToraDayName": "",
+    "dvarToraDay": "דבר תורה",
+    "dvarToraDayName": "אליקים נפתלי",
     "shiurDafYomiTime": "07:15",
-    "shiurAfterTfilaTime": "",
-    "shiurAfterTfila": "",
+    "shiurAfterTfilaTime": "10:15",
+    "shiurAfterTfila": "הרב ישי בוכריס",
     "shiurShabatTime": "17:45",
-    "shiurShabatName": "נתנאל אילוז, ׳שלוש נשים׳",
+    "shiurShabatName": "אריאל נפתלי, תרגום השבעים",
     "shiurShabatSubject": "",
     "odaha1": "",
     "chagim1": "מוריד הטל",
@@ -27,5 +27,5 @@
     "odaha3": "",
     "odaha3Name": "",
     "odaha3Time": "",
-    "configDate": "2025-06-10"
+    "configDate": "2025-06-25"
 }
