@@ -11,8 +11,8 @@
     "dvarToraDay": "דבר תורה",
     "dvarToraDayName": "אליקים נפתלי",
     "shiurDafYomiTime": "07:15",
-    "shiurAfterTfilaTime": "10:15",
-    "shiurAfterTfila": "הרב ישי בוכריס",
+    "shiurAfterTfilaTime": "",
+    "shiurAfterTfila": "",
     "shiurShabatTime": "17:45",
     "shiurShabatName": "אריאל נפתלי, תרגום השבעים",
     "shiurShabatSubject": "",
@@ -27,5 +27,5 @@
     "odaha3": "",
     "odaha3Name": "",
     "odaha3Time": "",
-    "configDate": "2025-06-25"
+    "configDate": "2025-06-26"
 }
